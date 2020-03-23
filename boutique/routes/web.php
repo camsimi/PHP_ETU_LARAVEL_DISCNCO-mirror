@@ -1,6 +1,9 @@
 <?php
 
+use Highlight\Mode;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
