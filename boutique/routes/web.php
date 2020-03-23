@@ -17,3 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/accueil', function () {
+    return view('accueil');
+});
+
+Route::get('/catalogue', function () {
+    return view('catalogue');
+});
+
+Route::get('/produit', function () {
+    return view('produit');
+});
+
+Route::get('/panier', function () {
+    return view('panier');
+});
