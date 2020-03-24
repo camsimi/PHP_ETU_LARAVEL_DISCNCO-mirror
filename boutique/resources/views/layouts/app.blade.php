@@ -12,17 +12,12 @@
 <body>
     <header>
 
-    @section('member_nav')
         @include('../navbars.member_nav')
-    @show
 
-    @section('main_nav')
         @include('../navbars.main_nav')
-    @show
 
-    @section('mobile_nav')
         @include('../navbars.mobile_nav')
-    @show
+
         </header>
 
 
@@ -31,9 +26,7 @@
         </div>
 
     <footer>
-    @section('footer')
-            @include('../footer.footer')
-    @show
+        @include('../footer.footer')
     </footer>
 
 </body>

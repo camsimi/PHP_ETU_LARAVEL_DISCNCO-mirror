@@ -5,6 +5,5 @@
 @section('title', 'Catalog')
 
 @section('content')
-
 <h1>voici le catalogue</h1>
 @endsection
