@@ -12,11 +12,11 @@
 <body>
     <header>
 
-        @include('includes.member_nav')
+        @include('layouts.includes.member_nav')
 
-        @include('includes.main_nav')
+        @include('layouts.includes.main_nav')
 
-        @include('includes.mobile_nav')
+        @include('layouts.includes.mobile_nav')
 
         </header>
 
@@ -26,7 +26,7 @@
         </div>
 
     <footer>
-        @include('includes.footer')
+        @include('layouts.includes.footer')
     </footer>
 
 </body>
