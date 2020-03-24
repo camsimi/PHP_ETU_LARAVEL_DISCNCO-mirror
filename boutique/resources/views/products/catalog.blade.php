@@ -6,5 +6,13 @@
 @endsection
 
 @section('content')
-<h1>voici le catalogue</h1>
+    <header>
+        <div class="container">
+            <div class="row header">
+                <div class="col-12">
+                    <h1>Catalog</h1>
+                </div>
+            </div>
+        </div>
+    </header>
 @endsection
