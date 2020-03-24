@@ -1,6 +1,23 @@
+body
+{
+    margin: 0;
+    height: 100vw;
+}
+
 .mobile_nav
 {
-    background-color: F8F8F8;
+    background-color: #F8F8F8;
+    width: 100vw;
+    height: 71px;
+    position: absolute;
+    top: 0;
+
+    display: flex;
+}
+
+.mobile_nav ul
+{
+    list-style-type: none;
 }
 
 .main_nav
@@ -11,6 +28,11 @@
 .member_nav
 {
     display: none;
+}
+
+.container
+{
+    margin-top: 71px;
 }
 
 
