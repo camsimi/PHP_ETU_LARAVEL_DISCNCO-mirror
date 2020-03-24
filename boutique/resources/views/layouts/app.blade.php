@@ -13,15 +13,15 @@
     <header>
 
     @section('member_nav')
-        @include('navbars.member_nav')
+        @include('../navbars.member_nav')
     @show
 
     @section('main_nav')
-        @include('navbars.main_nav')
+        @include('../navbars.main_nav')
     @show
 
     @section('mobile_nav')
-        @include('navbars.mobile_nav')
+        @include('../navbars.mobile_nav')
     @show
         </header>
 
@@ -32,9 +32,7 @@
 
     <footer>
     @section('footer')
-        <footer>
-            @include('footer.footer')
-        </footer>
+            @include('../footer.footer')
     @show
     </footer>
 

@@ -14,18 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home.home');
 });
 
 Route::get('/catalog', function () {
-    return view('catalog');
+    return view('catalog.catalog');
 });
 
 Route::get('/product', function () {
-    return view('product');
+    return view('product.product');
 });
 
 Route::get('/cart', function () {
-    return view('cart');
+    return view('cart.cart');
 });
 
