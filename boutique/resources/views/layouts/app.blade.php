@@ -10,36 +10,33 @@
     {{-- <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script> --}}
 </head>
 <body>
-
-<body>
+    <header>
 
     @section('member_nav')
-        <nav class="member_nav">
-            <h2>member_navbar</h2>
-        </nav>
+        @include('member_nav')
     @show
 
     @section('main_nav')
-        <nav class="main_nav">
-            <h2>main_navbar</h2>
-        </nav>
+        @include('main_nav')
     @show
 
     @section('mobile_nav')
-        <nav class="mobile_nav">
-            <h2>main_navbar</h2>
-        </nav>
+        @include('mobile_nav')
     @show
+        </header>
 
-    <div class="container">
+
+        <div class="container">
         @yield('content')
-</div>
+        </div>
 
+    <footer>
     @section('footer')
         <footer>
-            <h2>footer</h2>
+            @include('footer')
         </footer>
     @show
+    </footer>
 
 </body>
 
