@@ -1,4 +1,88 @@
-body
+h3
 {
+    margin-top: 10px;
+}
 
+.carrousel
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cover
+{
+    height: 155px;
+}
+
+.releases
+{
+    margin-top: 90px;
+}
+
+.arrow
+{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.buttons
+{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons .play
+{
+    margin-right: 5px;
+}
+
+.buttons .cart
+{
+    margin-left: 5px;
+}
+
+.pergenre .arrow
+{
+    height: 3rem;
+}
+
+.week_selection
+{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.turntables .button, .accessories .button
+{
+    position: relative;
+    left: 90px;
+    top: -25px;
+    height: 33px;
+}
+
+.newsletter form
+{
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-top: -5px;
+}
+
+.newsletter .textbox
+{
+    border-style: solid;
+    border-color: grey;
+    border-width: 0.5px;
+    border-radius: 2%;
+    width: 100%;
+    height: 50px;
+    margin: auto    ;
+}
+
+.newsletter button
+{
+    margin-top: 4px;
 }

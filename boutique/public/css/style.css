@@ -1,22 +1,30 @@
 @font-face
 {
-    font-family: 'texte';
-    src: url("../media/fonts/montserrat_regular.ttf");
-
     font-family: 'titre';
-    src: url("../media/fonts/lato_bold.ttf");
+    src: url("../media/fonts/lato_regular.ttf");
+}
+
+@font-face
+{
+    font-family: 'texte';
+    src: url("../media/fonts/montserrat.ttf");
 }
 
 html
 {
     font-size: 62.5%;
+    font-family: 'texte';
+}
+
+p
+{
+    font-size: 1rem;
 }
 
 body
 {
     margin: 0;
     height: 100vw;
-    font-family: 'texte';
 }
 
 h1
@@ -31,6 +39,15 @@ h2
     font-family: 'titre';
 }
 
+h3
+{
+    font-size: 1.5rem;
+}
+
+.category
+{
+    margin-top: 25px;
+}
 
 .mobile_nav
 {
@@ -79,6 +96,26 @@ h2
 .container
 {
     margin-top: 71px;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
+footer
+{
+    background-color: #F8F8F8;
+    height: 20vh;
+    text-align: center;
+    padding: 45px;
+
+}
+
+footer p
+{
+    font-size: 1.5rem;
+}
+
+footer .social
+{
+    height: 35px;
+}
 
