@@ -15,8 +15,6 @@
     {{-- <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script> --}}
 </head>
 <body>
-    <header>
-
         @include('layouts.includes.member_nav')
 
         @include('layouts.includes.main_nav')
@@ -24,6 +22,7 @@
         @include('layouts.includes.mobile_nav')
 
         @section('header')
+        <header>
 
             <div class="container">
                 <div class="row header">

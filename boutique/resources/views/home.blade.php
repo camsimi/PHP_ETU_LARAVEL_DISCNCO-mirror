@@ -9,36 +9,38 @@
 
 <div class="releases category">
     <h2>NEW RELEASES</h2>
-    <div class ="carrousel">
-        <span><img class="arrow" src="{{ asset('media/icons/left_arrow.svg')}}" alt="left arrow"></span>
-        <span><img class ="cover" src="{{ asset('media/covers/vacuum.jpg')}}" alt="album cover"></span>
-        <span><img class="arrow" src="{{ asset('media/icons/right_arrow.svg')}}" alt="right arrow"></span>
+    <div class ="row carrousel">
+        <button class="col-2"><img class="arrow " src="{{ asset('media/icons/left_arrow.svg')}}" alt="left arrow"></button>
+        <img class ="cover col-6" src="{{ asset('media/covers/vacuum.jpg')}}" alt="album cover">
+        <button class="col-2"><img class="arrow" src="{{ asset('media/icons/right_arrow.svg')}}" alt="right arrow"></button>
     </div>
-    <div class="buttons">
-        <span><img class="play" src="{{ asset('media/buttons/play_black.svg')}}" alt="play button"></span>
-        <span><img class="cart" src="{{ asset('media/buttons/cart_button.svg')}}" alt="add into cart button"></span>
+    <div class="row buttons">
+        <button type="submit"><img class="play" src="{{ asset('media/buttons/play_black.svg')}}" alt="play button"></button>
+        <button type="submit"><img class="cart" src="{{ asset('media/buttons/cart_button.svg')}}" alt="add into cart button"></button>
     </div>
 </div>
 
 <div class="pergenre category">
-    <div class="carrousel">
-        <span><img class="arrow" src="{{ asset('media/icons/left_arrow.svg')}}" alt="left arrow"></span>
-        <h2>GENRES</h2>
-        <span><img class="arrow" src="{{ asset('media/icons/right_arrow.svg')}}" alt="right arrow"></span>
+    <div class="row carrousel">
+        <button class="col"><img class="arrow" src="{{ asset('media/icons/left_arrow.svg')}}" alt="left arrow"></button>
+        <h2 class="col-6">GENRES</h2>
+        <button class="col"><img class="arrow" src="{{ asset('media/icons/right_arrow.svg')}}" alt="right arrow"></button>
     </div>
 
-    <div class="week_selection">
-        <div class="week_album">
+    <div class="row week_selection">
+        <div class="col-6 week_album">
             <section><img class ="cover" src="{{ asset('media/covers/kindofblue.jpg')}}" alt="Album of the week cover"></section>
             <h3>Album of the week</h3>
         </div>
 
-        <div class="week_single">
+        <div class="col-6 week_single">
             <section><img class ="cover" src="{{ asset('media/covers/lovesupreme.jpg')}}" alt="Single of the week cover"></section>
             <h3>Single of the week</h3>
         </div>
     </div>
-    <img src="{{ asset('media/buttons/see_more.svg')}}">
+    <div class="row">
+            <button class="col" type="submit"><img src="{{ asset('media/buttons/see_more.svg')}}"></button>
+    </div>
 </div>
 
 <div class="turntables category">
