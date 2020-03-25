@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('page_title') - Discn'Co</title>
 
+    <link href="{{ asset('css/bootstrap-grid-min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     {{-- Specific Stylesheet : --}}
@@ -22,16 +23,17 @@
 
         @include('layouts.includes.mobile_nav')
 
-        @yield('header')
+        @section('header')
 
             <div class="container">
-                <div class="row">
-                    <div class="col-12 header">
+                <div class="row header">
+                    <div class="col-12">
                         <h1 class="header_title">@yield('page_title')</h1>
                     </div>
                 </div>
             </div>
         </header>
+        @show
 
 
         <div class="container">

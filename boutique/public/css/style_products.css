@@ -1,0 +1,12 @@
+.header  {
+    background-image:url("../media/images/header.jpg");
+    background-position: center center;
+    height: 130px;
+    width: 100%;
+}
+
+.header_title {
+    text-align: center;
+    line-height: 130px;
+    color: #F8C804;
+}
