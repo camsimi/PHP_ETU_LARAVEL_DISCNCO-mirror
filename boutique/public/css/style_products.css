@@ -1,12 +1,32 @@
 .header  {
     background-image:url("../media/images/header.jpg");
     background-position: center center;
-    height: 130px;
-    width: 100%;
+    height: 100px;
 }
 
 .header_title {
     text-align: center;
-    line-height: 130px;
+    /*line-height: 100px;*/
+    vertical-align: middle;
     color: #F8C804;
+}
+
+
+
+
+/* DESKTOP */
+.genres_line {
+
+}
+
+.genre1 {
+
+}
+
+.genre2 {
+
+}
+
+.genre3 {
+
 }
