@@ -2,6 +2,9 @@
 {
     font-family: 'titre';
     src: url("../media/fonts/lato_regular.ttf");
+
+    font-family: 'header';
+    src: url("../media/fonts/monoton.ttf");
 }
 
 @font-face
@@ -27,10 +30,11 @@ body
     height: 100vw;
 }
 
-h1
+h1, .header_title
 {
-    font-size: 3rem;
-    font-family: 'titre';
+    font-size: 5rem;
+    font-family: 'header';
+    font-weight: normal;
 }
 
 h2
@@ -118,4 +122,6 @@ footer .social
 {
     height: 35px;
 }
+
+
 
