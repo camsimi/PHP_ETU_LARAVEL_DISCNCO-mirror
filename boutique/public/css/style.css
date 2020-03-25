@@ -1,23 +1,36 @@
+@font-face
+{
+    font-family: 'texte';
+    src: url("../media/fonts/montserrat_regular.ttf");
+
+    font-family: 'titre';
+    src: url("../media/fonts/lato_bold.ttf");
+}
+
 html
 {
     font-size: 62.5%;
-}
-
-h1
-{
-    font-size: 3rem;
-}
-
-h2
-{
-    font-size: 2rem;
 }
 
 body
 {
     margin: 0;
     height: 100vw;
+    font-family: 'texte';
 }
+
+h1
+{
+    font-size: 3rem;
+    font-family: 'titre';
+}
+
+h2
+{
+    font-size: 2rem;
+    font-family: 'titre';
+}
+
 
 .mobile_nav
 {
