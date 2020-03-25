@@ -29,6 +29,28 @@
     justify-content: center;
 }
 
+.select-case {
+    background-color: #C4C4C4;
+}
+
+.week {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.week_bloc {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.pochette {
+    height: 200px;
+}
+
+.week_title {
+    margin: 0;
+    padding-bottom: 5px;
+}
 
 /* DESKTOP */
 .genres_line {
