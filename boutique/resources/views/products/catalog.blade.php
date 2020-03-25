@@ -13,4 +13,18 @@
 
 
 
+{{--    <div>--}}
+{{--        <div class="genres_line genre1">--}}
+
+{{--        </div>--}}
+
+{{--        <div class="genres_line genre2">--}}
+
+{{--        </div>--}}
+
+{{--        <div class="genres_line genre3">--}}
+
+{{--        </div>--}}
+{{--    </div>--}}
+
 @endsection
