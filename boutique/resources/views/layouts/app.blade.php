@@ -15,8 +15,6 @@
     {{-- <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script> --}}
 </head>
 <body>
-    <header>
-
         @include('layouts.includes.member_nav')
 
         @include('layouts.includes.main_nav')
@@ -25,14 +23,13 @@
 
         @section('header')
 
-            <div class="container">
-                <div class="row header">
-                    <div class="col-12">
-                        <h1 class="header_title">@yield('page_title')</h1>
-                    </div>
-                </div>
+    <header>
+        <div class="container header-bloc">
+            <div class="header">
+                <h1 class="header_title">@yield('page_title')</h1>
             </div>
-        </header>
+        </div>
+    </header>
         @show
 
 
