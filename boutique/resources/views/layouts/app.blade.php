@@ -7,6 +7,10 @@
     <title>@yield('page_title') - Discn'Co</title>
 
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+    {{-- Specific Stylesheet : --}}
+    @yield('css')
+
     {{-- <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script> --}}
 </head>
 <body>

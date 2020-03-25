@@ -1,6 +1,9 @@
 @extends('../layouts.app')
 
 @section('page_title', 'Home')
+@section('css')
+<link href="{{ asset('css/style_home.css') }}" rel="stylesheet">
+@endsection
 
 @section('content')
 <div class="releases">
