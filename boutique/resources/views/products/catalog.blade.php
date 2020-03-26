@@ -5,10 +5,11 @@
 <link href="{{ asset('css/style_products.css') }}" rel="stylesheet">
 @endsection
 
-@section('content')
+@section('header')
+    @parent
+@endsection
 
-    @section('header')
-        @parent
+@section('content')
 
     <div class="select-container">
         <label for="select-genre"></label>
@@ -28,32 +29,64 @@
         </div>
     </div>
 
-    <div class="week col-12">
-
-        <div class="week_bloc">
-            <div class="bloc_pochette">
-                <h3 class="week_title">Single de la semaine</h3>
-                <img src="http://localhost:8000/media/covers/single.jpg" alt="single de la semaine" class="pochette">
-            </div>
-            <div class="infos">
-                <h2 class="">Title</h2>
-                <p class="description">C’est une super description de la mort qui tue sur un single de la semaine qui a bien était vendu et écouté !</p>
-                <span>12 euros</span>
-                <img src="http://localhost:8000/media/buttons/play_black.svg" alt="écouter un extrait" class="">
-                <img src="http://localhost:8000/media/buttons/cart_button.svg" alt="ajouter au panier" class="">
-            </div>
+    <div class="week">
+            <div class="week_bloc row">
+                <div class="bloc_pochette blocw col-8">
+                    <h3 class="week_title">Single de la semaine</h3>
+                    <img src="http://localhost:8000/media/covers/single.jpg" alt="single de la semaine" class="pochette">
+                </div>
+                <div class="infos blocw col-4">
+                    <h2 class="">Title</h2>
+                    <p class="description">C’est une super description de la mort qui tue sur un single de la semaine qui a bien était vendu et écouté !</p>
+                    <span><strong>12 euros</strong></span>
+                    <br>
+                    <br>
+                    <img class="button" src="http://localhost:8000/media/buttons/play_black.svg" alt="écouter un extrait" class="">
+                    <img class="button" src="http://localhost:8000/media/buttons/cart_button.svg" alt="ajouter au panier" class="">
+                </div>
         </div>
 
-        <div class="week_bloc">
-            <div class="bloc_pochette">
+        <div class="week_bloc row">
+            <div class="bloc_pochette blocw col-8">
                 <h3 class="week_title">Album de la semaine</h3>
                 <img src="http://localhost:8000/media/covers/album.jpg" alt="album de la semaine" class="pochette">
+            </div>
+            <div class="infos blocw col-4">
+                <h2 class="">Title</h2>
+                <p class="description">C’est une super description de la mort qui tue sur un single de la semaine qui a bien était vendu et écouté !</p>
+                <span><strong>25 euros</strong></span>
+                <br>
+                <br>
+                <img class="button" src="http://localhost:8000/media/buttons/play_black.svg" alt="écouter un extrait" class="">
+                <img class="button" src="http://localhost:8000/media/buttons/cart_button.svg" alt="ajouter au panier" class="">
             </div>
 
         </div>
 
     </div>
 
+    <div class="catalog">
+        <div class="row">
+            <div class="cover col-6">
+                <img class="cover_catalog" src="http://localhost:8000/media/covers/spectacular.png" alt="vinyl spectacular">
+                <div class="details">
+                    <h3 class="h_catalogue">Spectacular</h3>
+                    <h2 class="h_catalogue">Jah Rise</h2>
+                    <strong>64 euros</strong>
+                </div>
+            </div>
+
+            <div class="cover col-6">
+                <img class="cover_catalog" src="http://localhost:8000/media/covers/voyage.jpg" alt="vinyl voyage">
+                <div class="details">
+                    <h3 class="h_catalogue">Spectacular</h3>
+                    <h2 class="h_catalogue">Jah Rise</h2>
+                    <strong>64 euros</strong>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 {{--    <div>--}}
 {{--        <div class="genres_line genre1">--}}

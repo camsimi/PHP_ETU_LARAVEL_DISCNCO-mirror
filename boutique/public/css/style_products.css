@@ -19,10 +19,6 @@
     color: #F8C804;
 }
 
-.select-container {
-    align-content: center;
-}
-
 .select-genre-bloc {
     padding: 0;
     margin: 0;
@@ -35,22 +31,54 @@
 
 .week {
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 35px;
+    padding: 0;
+    text-align: left;
 }
 
 .week_bloc {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 0px;
 }
 
 .pochette {
-    height: 200px;
+    /*height: 220px;*/
+    max-width: 100%;
 }
 
 .week_title {
     margin: 0;
     padding-bottom: 5px;
 }
+
+.infos {
+    text-align: left;
+}
+
+span {
+    text-align: right;
+}
+
+.button {
+    height: 35px;
+}
+
+.catalog {
+    margin-top: 35px;
+}
+
+.cover {
+
+}
+
+.cover_catalog {
+    max-width: 100%;
+}
+
+.h_catalogue {
+    margin: 0;
+}
+
+
 
 /* DESKTOP */
 .genres_line {
