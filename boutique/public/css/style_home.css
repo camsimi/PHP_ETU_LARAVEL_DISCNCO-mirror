@@ -1,3 +1,8 @@
+header
+{
+    display: none;
+}
+
 h3
 {
     margin-top: 10px;
@@ -5,14 +10,24 @@ h3
 
 .carrousel
 {
-    display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
+.pergenre .arrow
+{
+    height: 2rem;
+}
+
+.cover-div
+{
+    align-items: center;
+    padding: 15px;
+}
+
 .cover
 {
-    height: 155px;
+    max-height: 155px;
 }
 
 .releases
@@ -20,18 +35,10 @@ h3
     margin-top: 90px;
 }
 
-.arrow
-{
-    margin-left: 40px;
-    margin-right: 40px;
-}
-
 .buttons
 {
     margin: 10px;
-    display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .buttons .play
@@ -42,11 +49,6 @@ h3
 .buttons .cart
 {
     margin-left: 5px;
-}
-
-.pergenre .arrow
-{
-    height: 3rem;
 }
 
 .week_selection
@@ -85,4 +87,139 @@ h3
 .newsletter button
 {
     margin-top: 4px;
+}
+
+/*-------DESKTOP ------*/
+
+.album
+{
+    font-size: 2rem;
+    font-family: 'texte-bold';
+}
+
+.artist
+{
+    font-size: 1.5rem;
+}
+
+.prix
+{
+    font-size: 2rem;
+    font-family: 'texte-bold';
+}
+
+.infos
+{
+    min-height: 100%;
+    vertical-align: top;
+    padding: 20px;
+}
+
+.description
+{
+    text-align: justify;
+}
+
+.see_more
+{
+    height: 36px;
+}
+
+.filter
+{
+    color: white;
+    font-family: 'texte-bold';
+}
+
+.filter p
+{
+    font-size: 1.5rem;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.genre
+{
+    background-color: #F8C804;
+}
+
+.subgenre
+{
+    background-color: #FFD837;
+}
+
+.most
+{
+    background-color: #FCEBA3;
+}
+
+.selection
+{
+    margin-top: -35px;
+}
+
+.selection .row
+{
+    margin-bottom: 10px;
+}
+
+.selection .cover
+{
+    max-height: 200px;
+}
+
+.product_box .desktop
+{
+    max-width: 80%;
+    margin: auto;
+    align-items: center;
+}
+
+@media screen and (min-width: 400px)
+{
+
+    .desktop
+    {
+        display: block;
+    }
+
+    .mouse_over
+    {
+        width: 100%;
+        position: absolute;
+        margin: auto;
+        top: 130px;
+    }
+
+    .carrousel .cover
+    {
+        height:100%;
+    }
+
+    .carrousel .row
+    {
+        margin-top: 20px;
+    }
+
+    .cover
+    {
+        max-height: 300px;
+    }
+
+    .newsletter .textbox
+    {
+        margin-right: 10px;
+        margin-left: 0px;
+    }
+
+    .newsletter .row
+    {
+        margin-left: 30%;
+        margin-right: auto;
+    }
+
+    .newsletter
+    {
+        margin-bottom: 25px;
+    }
 }
