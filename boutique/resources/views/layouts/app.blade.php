@@ -15,9 +15,8 @@
     {{-- <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script> --}}
 </head>
 <body>
-        @include('layouts.includes.member_nav')
 
-        @include('layouts.includes.main_nav')
+        @include('layouts.includes.desktop_nav')
 
         @include('layouts.includes.mobile_nav')
 

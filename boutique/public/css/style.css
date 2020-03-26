@@ -16,10 +16,23 @@
     src: url("../media/fonts/montserrat.ttf");
 }
 
+@font-face
+{
+    font-family: 'texte-bold';
+    src: url("../media/fonts/montserrat_bold.ttf");
+}
+
+button
+{
+    border:none;
+    background: transparent;
+}
+
 html
 {
     font-size: 62.5%;
     font-family: 'texte';
+    overflow-x: hidden;
 }
 
 p
@@ -61,6 +74,8 @@ button
     margin-top: 25px;
 }
 
+/*----- MOBILE NAV ----*/
+
 .mobile_nav
 {
     background-color: #F8F8F8;
@@ -95,14 +110,97 @@ button
     margin-right: 15px;
 }
 
-.main_nav
+/*----- DESKTOP NAV ----*/
+nav
 {
-    display: none;
+    position: absolute;
+    width: 100vw;
+    top: 0px;
 }
 
 .member_nav
 {
-    display: none;
+    padding: 5px;
+    height: 30px;
+}
+
+.member_nav .row
+{
+    margin:auto;
+}
+
+.member_nav .icon
+{
+    max-height: 15px;
+    margin-right: 5px;
+}
+
+.separator
+{
+    margin: 5px;
+}
+
+.member_nav .right
+{
+text-align: right;
+margin-right: 15px;
+}
+
+.member_nav .left
+{
+margin-left: 15px;
+}
+
+.main_nav
+{
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 50px;
+    background-color: #F8F8F8;
+}
+
+.main_nav .right
+{
+    text-align: right;
+    font-size: 1.5rem;
+}
+
+.main_nav .icon
+{
+    max-height: 25px;
+    margin: auto;
+    margin-top: 7px;
+    margin-left: 50px;
+}
+
+.main_nav .home
+{
+    max-height: 40px;
+    margin-left: 15px;
+}
+
+.main_nav .searchbar
+{
+    width: 50%;
+    height: 60%;
+    padding: 5px;
+    margin: auto;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-style: none;
+    background: transparent;
+}
+
+.main_nav .col
+{
+    margin:auto;
+}
+
+.main_nav .left
+{
+    height: 100%;
+    margin: auto;
 }
 
 .container
@@ -130,5 +228,21 @@ footer .social
     height: 35px;
 }
 
+.desktop
+{
+    display: none;
+}
 
+@media screen and (min-width: 400px)
+{
+    .mobile
+    {
+        display: none;
+    }
+
+    footer
+    {
+        height: 150px;
+    }
+}
 
