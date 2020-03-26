@@ -1,4 +1,4 @@
-<nav class="mobile_nav">
+<nav class="mobile mobile_nav">
     <div>
         <a><img class="home" src="{{ asset('media/icons/logo.svg') }}" alt="home button"></a>
     </div>

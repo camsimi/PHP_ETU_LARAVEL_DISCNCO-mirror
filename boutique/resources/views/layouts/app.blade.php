@@ -15,16 +15,17 @@
     {{-- <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script> --}}
 </head>
 <body>
-        @include('layouts.includes.member_nav')
 
-        @include('layouts.includes.main_nav')
+        @include('layouts.includes.desktop_nav')
 
         @include('layouts.includes.mobile_nav')
 
         @section('header')
-            <header>
-                <div class="header-bloc">
-                    <div class="header">
+        <header>
+
+            <div class="container">
+                <div class="row header">
+                    <div class="col-12">
                         <h1 class="header_title">@yield('page_title')</h1>
                     </div>
                 </div>
