@@ -11,7 +11,6 @@
 
     {{-- Specific Stylesheet : --}}
     @yield('css')
-
     {{-- <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script> --}}
 </head>
 <body>
@@ -21,7 +20,7 @@
 
         @include('layouts.includes.mobile_nav')
 
-        @section('header')
+    @section('header')
             <header>
                 <div class="header-bloc">
                     <div class="header">
@@ -29,7 +28,9 @@
                     </div>
                 </div>
             </header>
-        @show
+    @show
+
+
 
 
         <div class="container">

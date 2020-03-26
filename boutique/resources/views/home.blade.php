@@ -5,6 +5,9 @@
 <link href="{{ asset('css/style_home.css') }}" rel="stylesheet">
 @endsection
 
+@section('header')
+@endsection
+
 @section('content')
 
 <div class="releases category">

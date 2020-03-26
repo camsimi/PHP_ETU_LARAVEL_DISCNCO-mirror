@@ -5,9 +5,9 @@
 <link href="{{ asset('css/style_products.css') }}" rel="stylesheet">
 @endsection
 
-{{--@section('header')--}}
-{{--    @parent--}}
-{{--@endsection--}}
+@section('header')
+    @parent
+@endsection
 
 @section('content')
 
