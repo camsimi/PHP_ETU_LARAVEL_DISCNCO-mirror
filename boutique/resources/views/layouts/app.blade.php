@@ -22,14 +22,13 @@
         @include('layouts.includes.mobile_nav')
 
         @section('header')
-
-    <header>
-        <div class="container header-bloc">
-            <div class="header">
-                <h1 class="header_title">@yield('page_title')</h1>
-            </div>
-        </div>
-    </header>
+            <header>
+                <div class="header-bloc">
+                    <div class="header">
+                        <h1 class="header_title">@yield('page_title')</h1>
+                    </div>
+                </div>
+            </header>
         @show
 
 

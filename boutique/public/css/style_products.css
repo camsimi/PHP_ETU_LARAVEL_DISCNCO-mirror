@@ -63,6 +63,9 @@ span {
     text-align: right;
 }
 
+.buttons_catalog {
+    display: inline-block;
+}
 
 
 /* DESKTOP */

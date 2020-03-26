@@ -5,9 +5,9 @@
 <link href="{{ asset('css/style_products.css') }}" rel="stylesheet">
 @endsection
 
-@section('header')
-    @parent
-@endsection
+{{--@section('header')--}}
+{{--    @parent--}}
+{{--@endsection--}}
 
 @section('content')
 
@@ -41,8 +41,16 @@
                     <span><strong>12 euros</strong></span>
                     <br>
                     <br>
-                    <img class="button" src="http://localhost:8000/media/buttons/play_black.svg" alt="écouter un extrait" class="">
-                    <img class="button" src="http://localhost:8000/media/buttons/cart_button.svg" alt="ajouter au panier" class="">
+                    <div class="buttons_catalog">
+                        <a href="">
+                            <img class="button" src="http://localhost:8000/media/buttons/play_black.svg" alt="écouter un extrait">
+                        </a>
+                    </div>
+                    <div class="buttons_catalog">
+                        <form action="" method="">
+                          <input class="button" type="image" id="image" alt="ajout au panier" src="http://localhost:8000/media/buttons/cart_button.svg">
+                        </form>
+                    </div>
                 </div>
         </div>
 
@@ -57,8 +65,16 @@
                 <span><strong>25 euros</strong></span>
                 <br>
                 <br>
-                <img class="button" src="http://localhost:8000/media/buttons/play_black.svg" alt="écouter un extrait" class="">
-                <img class="button" src="http://localhost:8000/media/buttons/cart_button.svg" alt="ajouter au panier" class="">
+                <div class="buttons_catalog">
+                    <a href="">
+                        <img class="button" src="http://localhost:8000/media/buttons/play_black.svg" alt="écouter un extrait" class="">
+                    </a>
+                </div>
+                <div class="buttons_catalog">
+                    <form action="" method="">
+                       <input class="button" type="image" id="image" alt="ajout au panier" src="http://localhost:8000/media/buttons/cart_button.svg">
+                    </form>
+                </div>
             </div>
 
         </div>
@@ -84,6 +100,7 @@
                     <p class="prix">64 euros</p>
                 </div>
             </div>
+
             <div class="cover col">
                 <img class="cover_catalog" src="http://localhost:8000/media/covers/spectacular.png" alt="vinyl spectacular">
                 <div class="details">
