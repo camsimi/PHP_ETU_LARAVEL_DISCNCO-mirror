@@ -1,7 +1,6 @@
 @extends('../layouts.app')
 
 @section('page_title', 'CATALOG')
-
 @section('css')
 <link href="{{ asset('css/style_products.css') }}" rel="stylesheet">
 @endsection
