@@ -270,6 +270,11 @@ footer p
     .mobile
     {
         display: none;
+
+    }
+    .desktop
+    {
+        display: block;
     }
 
     footer

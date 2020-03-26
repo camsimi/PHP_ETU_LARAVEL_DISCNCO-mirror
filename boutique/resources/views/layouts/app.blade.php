@@ -27,10 +27,7 @@
                     </div>
                 </div>
             </header>
-    @show
-
-
-
+        @show
 
         <div class="container">
         @yield('content')
