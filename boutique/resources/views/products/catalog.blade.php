@@ -67,21 +67,55 @@
 
     <div class="catalog">
         <div class="row">
-            <div class="cover col-6">
+            <div class="cover col">
                 <img class="cover_catalog" src="http://localhost:8000/media/covers/spectacular.png" alt="vinyl spectacular">
                 <div class="details">
                     <h3 class="h_catalogue">Spectacular</h3>
                     <h2 class="h_catalogue">Jah Rise</h2>
-                    <strong>64 euros</strong>
+                    <p class="prix">64 euros</p>
                 </div>
             </div>
 
-            <div class="cover col-6">
+            <div class="cover col">
                 <img class="cover_catalog" src="http://localhost:8000/media/covers/voyage.jpg" alt="vinyl voyage">
                 <div class="details">
                     <h3 class="h_catalogue">Spectacular</h3>
                     <h2 class="h_catalogue">Jah Rise</h2>
-                    <strong>64 euros</strong>
+                    <p class="prix">64 euros</p>
+                </div>
+            </div>
+            <div class="cover col">
+                <img class="cover_catalog" src="http://localhost:8000/media/covers/spectacular.png" alt="vinyl spectacular">
+                <div class="details">
+                    <h3 class="h_catalogue">Spectacular</h3>
+                    <h2 class="h_catalogue">Jah Rise</h2>
+                    <p class="prix">64 euros</p>
+                </div>
+            </div>
+
+            <div class="cover col">
+                <img class="cover_catalog" src="http://localhost:8000/media/covers/voyage.jpg" alt="vinyl voyage">
+                <div class="details">
+                    <h3 class="h_catalogue">Spectacular</h3>
+                    <h2 class="h_catalogue">Jah Rise</h2>
+                    <p class="prix">64 euros</p>
+                </div>
+            </div>
+            <div class="cover col">
+                <img class="cover_catalog" src="http://localhost:8000/media/covers/spectacular.png" alt="vinyl spectacular">
+                <div class="details">
+                    <h3 class="h_catalogue">Spectacular</h3>
+                    <h2 class="h_catalogue">Jah Rise</h2>
+                    <p class="prix">64 euros</p>
+                </div>
+            </div>
+
+            <div class="cover col">
+                <img class="cover_catalog" src="http://localhost:8000/media/covers/voyage.jpg" alt="vinyl voyage">
+                <div class="details">
+                    <h3 class="h_catalogue">Spectacular</h3>
+                    <h2 class="h_catalogue">Jah Rise</h2>
+                    <p class="prix">64 euros</p>
                 </div>
             </div>
         </div>
