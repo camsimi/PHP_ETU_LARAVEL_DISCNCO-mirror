@@ -1,5 +1,8 @@
 @font-face
 {
+    font-family: 'titre';
+    src: url("../media/fonts/lato_bold.ttf");
+
     font-family: 'header';
     src: url("../media/fonts/monoton.ttf");
 }
@@ -47,7 +50,7 @@ body
     font-family: 'texte';
 }
 
-h1, .header_title
+h1
 {
     font-size: 4rem;
     font-family: 'header';
@@ -69,22 +72,31 @@ h3
     padding: 0;
 }
 
-.header  {
-    background-image:url("../media/images/header.jpg");
+.header {
+    background-image: url("../media/images/header.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100px;
     width: 100%;
     padding: 0;
-    margin-top: 71px;
+    margin-top: 80px;
+    height: 100px;
 }
 
 .header_title {
     text-align: center;
     line-height: 100px;
-    vertical-align: middle;
     color: #F8C804;
+}
+
+@media (min-width: 992px) {
+    .header {
+        height: 150px;
+    }
+    .header_title {
+        line-height: 150px;
+        font-size: 7rem;
+    }
 }
 
 button
@@ -239,6 +251,7 @@ footer
     height: 20vh;
     text-align: center;
     padding: 45px;
+
 }
 
 footer p
@@ -252,16 +265,31 @@ footer p
     display: none;
 }
 
-@media screen and (min-width: 400px)
+@media screen and (min-width: 465px)
 {
     .mobile
     {
+        display: none;
+
+    }
+    .desktop
+    {
+        display: block;
+    }
+
+    .searchbar {
         display: none;
     }
 
     footer
     {
         height: 150px;
+    }
+}
+
+@media (min-width: 687px) {
+    .searchbar {
+        display: block;
     }
 }
 

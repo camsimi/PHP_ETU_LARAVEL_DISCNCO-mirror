@@ -5,9 +5,9 @@
 <link href="{{ asset('css/style_products.css') }}" rel="stylesheet">
 @endsection
 
-{{--@section('header')--}}
-{{--    @parent--}}
-{{--@endsection--}}
+@section('header')
+    @parent
+@endsection
 
 @section('content')
 
@@ -29,6 +29,24 @@
         </div>
     </div>
 
+    <div class="desktop_genre">
+        <div class="filter genre">
+            <div class="col-12">
+                <p>Genre</p>
+            </div>
+        </div>
+        <div class="filter subgenre">
+            <div class="">
+                <p>Genre</p>
+            </div>
+        </div>
+        <div class="filter most">
+            <div class="">
+                <p>Genre</p>
+            </div>
+        </div>
+    </div>
+
     <div class="week">
             <div class="week_bloc row">
                 <div class="bloc_pochette blocw col-8">
@@ -36,14 +54,14 @@
                     <img src="http://localhost:8000/media/covers/single.jpg" alt="single de la semaine" class="pochette">
                 </div>
                 <div class="infos blocw col-4">
-                    <h2 class="">Title</h2>
-                    <p class="description">C’est une super description de la mort qui tue sur un single de la semaine qui a bien était vendu et écouté !</p>
+                    <h2>Title</h2>
+                    <p>C’est une super description de la mort qui tue sur un single de la semaine qui a bien était vendu et écouté !</p>
                     <span><strong>12 euros</strong></span>
                     <br>
                     <br>
                     <div class="buttons_catalog">
                         <a href="">
-                            <img class="button" src="http://localhost:8000/media/buttons/play_black.svg" alt="écouter un extrait">
+                            <img class="button play_button" src="http://localhost:8000/media/buttons/play_black.svg" alt="écouter un extrait">
                         </a>
                     </div>
                     <div class="buttons_catalog">

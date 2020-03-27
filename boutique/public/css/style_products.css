@@ -1,3 +1,8 @@
+.select-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 20px;
+}
 
 .select-genre-bloc {
     padding: 0;
@@ -32,14 +37,11 @@
 
 .infos {
     text-align: left;
+    padding-left: 0;
 }
 
 span {
     text-align: right;
-}
-
-.button {
-    height: 35px;
 }
 
 .catalog {
@@ -67,6 +69,14 @@ span {
     display: inline-block;
 }
 
+.button {
+    height: 3.5rem;
+}
+
+.play_button {
+    /*height: 30px;*/
+}
+
 
 /* DESKTOP */
 .genres_line {
@@ -85,22 +95,58 @@ span {
 
 }
 
+.desktop_genre {
+    display: none;
+}
 
 
 
 /* DESKTOP */
-.genres_line {
 
+.filter {
+    height: 30px;
+    margin: -15px;
 }
 
-.genre1 {
-
+.filter p
+{
+    font-size: 1.5em;
+    color: white;
+    line-height: 30px;
 }
 
-.genre2 {
-
+.genre
+{
+    background-color: #F8C804;
 }
 
-.genre3 {
+.subgenre
+{
+    background-color: #FFD837;
+}
 
+.most
+{
+    background-color: #FCEBA3;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+
+@media (min-width: 400px) {
+    .desktop_genre {
+        display: block;
+        padding: 0;
+        margin-bottom: 80px;
+    }
+
+    .container {
+        margin-top: 0px;
+    }
+
+    .select-container {
+        display: none;
+    }
 }

@@ -5,6 +5,9 @@
 <link href="{{ asset('css/style_home.css') }}" rel="stylesheet">
 @endsection
 
+@section('header')
+@endsection
+
 @section('content')
 
 <div class="container">
@@ -130,42 +133,36 @@
         </div>
 
     </div>
-    </div>
 
-</div>
-
-<div class="container">
-
-
-<div class="turntables category">
-    <h2>TURNTABLES</h2>
-    <div class="row">
-    <div class="product_box col">
-        <img class="mobile" src="{{ asset('media/images/turntable.png')}}" alt="turntable photo">
-        <img class="desktop" src="{{ asset('media/images/turntable_desktop.jpg')}}" alt="turntable photo">
-        <img class="button mobile" src="{{ asset('media/buttons/see_more.svg')}}">
-    </div>
-</div>
-</div>
-
-<div class="accessories category">
-    <h2>ACCESSORIES</h2>
-    <div class="product_box col">
-        <img class="mobile" src="{{ asset('media/images/accessories.jpg')}}" alt="accessories photo">
-        <img class="desktop" src="{{ asset('media/images/accessories_desktop.jpg')}}" alt="turntable photo">
-        <img class="button mobile" src="{{ asset('media/buttons/see_more.svg')}}">
-    </div>
-</div>
-
-<div class="newsletter category">
-    <h2>NEWSLETTER</h2>
-    <form action="post">
+    <div class="turntables category">
+        <h2>TURNTABLES</h2>
         <div class="row">
-            <input class="col col-sm-5 textbox" type="text" placeholder="sign in for the newsletter ...">
-            <button type="col col-sm-1 submit"><img src="{{ asset('media/buttons/mail.svg')}}" alt="mail button"></button>
+            <div class="product_box col">
+                <img class="mobile" src="{{ asset('media/images/turntable.png')}}" alt="turntable photo">
+                <img class="desktop" src="{{ asset('media/images/turntable_desktop.jpg')}}" alt="turntable photo">
+                <img class="button mobile" src="{{ asset('media/buttons/see_more.svg')}}">
+            </div>
         </div>
-    </form>
-</div>
+    </div>
+
+    <div class="accessories category">
+        <h2>ACCESSORIES</h2>
+        <div class="product_box col">
+            <img class="mobile" src="{{ asset('media/images/accessories.jpg')}}" alt="accessories photo">
+            <img class="desktop" src="{{ asset('media/images/accessories_desktop.jpg')}}" alt="turntable photo">
+            <img class="button mobile" src="{{ asset('media/buttons/see_more.svg')}}">
+        </div>
+    </div>
+
+    <div class="newsletter category">
+        <h2>NEWSLETTER</h2>
+        <form action="post">
+            <div class="row">
+                <input class="col col-sm-5 textbox" type="text" placeholder="sign in for the newsletter ...">
+                <button type="col col-sm-1 submit"><img src="{{ asset('media/buttons/mail.svg')}}" alt="mail button"></button>
+            </div>
+        </form>
+    </div>
 </div>
 
 @endsection
