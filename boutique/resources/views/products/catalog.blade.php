@@ -31,21 +31,41 @@
 
     <div class="desktop_genre">
         <div class="filter genre">
-            <div class="col-12">
+            <div class="canard_square">
                 <p>Genre</p>
             </div>
         </div>
         <div class="filter subgenre">
-            <div class="">
-                <p>Genre</p>
+            <div class="canard_square">
+                <p>Subgenre</p>
             </div>
         </div>
         <div class="filter most">
-            <div class="">
-                <p>Genre</p>
+            <div class="canard_square">
+                <p>Most</p>
             </div>
         </div>
     </div>
+
+{{--    SELECT GENRE A INTEGRER AVEC GRID--}}
+{{--    <div class="filter-div">--}}
+{{--        <div class="row filter genre">--}}
+{{--            <div class="col-8 offset-2">--}}
+{{--                <p>Genre</p>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="row filter subgenre">--}}
+{{--            <div class="col-8 offset-2">--}}
+{{--                <p>Genre</p>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="row filter most">--}}
+{{--            <div class="col-8 offset-2">--}}
+{{--                <p>Genre</p>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+
 
     <div class="week">
             <div class="week_bloc row">
