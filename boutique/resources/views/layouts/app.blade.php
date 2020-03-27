@@ -11,7 +11,6 @@
 
     {{-- Specific Stylesheet : --}}
     @yield('css')
-
     {{-- <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script> --}}
 </head>
 <body>
@@ -21,17 +20,14 @@
         @include('layouts.includes.mobile_nav')
 
         @section('header')
-        <header>
-
-            <div class="container">
-                <div class="row header">
-                    <div class="col-12">
+            <header>
+                <div class="header-bloc">
+                    <div class="header">
                         <h1 class="header_title">@yield('page_title')</h1>
                     </div>
                 </div>
             </header>
         @show
-
 
         <div class="container">
         @yield('content')

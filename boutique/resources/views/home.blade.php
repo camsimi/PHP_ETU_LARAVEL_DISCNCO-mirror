@@ -5,6 +5,9 @@
 <link href="{{ asset('css/style_home.css') }}" rel="stylesheet">
 @endsection
 
+@section('header')
+@endsection
+
 @section('content')
 
 <div class="releases category">
@@ -83,27 +86,27 @@
             </div>
         </div>
 
-    <div class="container">
-        <div class="selection">
-            <div class="row">
-                <div class="col-2">
-                    <section>
-                        <img class ="cover" src="{{ asset('media/covers/lovesupreme.jpg')}}"
-                        alt="Single of the week cover">
-                    </section>
+        <div class="container">
+            <div class="selection">
+                <div class="row">
+                    <div class="col-2">
+                        <section>
+                            <img class ="cover" src="{{ asset('media/covers/lovesupreme.jpg')}}"
+                            alt="Single of the week cover">
+                        </section>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-2">
-                    <section>
-                        <img class ="cover" src="{{ asset('media/covers/lovesupreme.jpg')}}"
-                        alt="Single of the week cover">
-                    </section>
+                <div class="row">
+                    <div class="col-2">
+                        <section>
+                            <img class ="cover" src="{{ asset('media/covers/lovesupreme.jpg')}}"
+                            alt="Single of the week cover">
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 <div class="container">
 
