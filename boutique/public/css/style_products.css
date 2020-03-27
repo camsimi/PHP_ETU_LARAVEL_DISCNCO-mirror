@@ -37,14 +37,11 @@
 
 .infos {
     text-align: left;
+    padding-left: 0;
 }
 
 span {
     text-align: right;
-}
-
-.button {
-    height: 35px;
 }
 
 .catalog {
@@ -72,6 +69,14 @@ span {
     display: inline-block;
 }
 
+.button {
+    height: 3.5rem;
+}
+
+.play_button {
+    /*height: 30px;*/
+}
+
 
 /* DESKTOP */
 .genres_line {
@@ -90,22 +95,53 @@ span {
 
 }
 
+.filter-div {
+    display: none;
+}
 
 
 
 /* DESKTOP */
-.genres_line {
 
+.filter p
+{
+    font-size: 1.5rem;
 }
 
-.genre1 {
-
+.genre
+{
+    background-color: #F8C804;
 }
 
-.genre2 {
-
+.subgenre
+{
+    background-color: #FFD837;
 }
 
-.genre3 {
+.most
+{
+    background-color: #FCEBA3;
+}
 
+
+@media (min-width: 400px) {
+    .container, .desktop_genre {
+        padding: 0;
+        margin: 0;
+    }
+
+    .filter-div {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    .filter-div p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .select-container {
+        display: none;
+    }
 }
