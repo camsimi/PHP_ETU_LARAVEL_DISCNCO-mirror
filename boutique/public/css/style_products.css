@@ -95,7 +95,7 @@ span {
 
 }
 
-.filter-div {
+.desktop_genre {
     display: none;
 }
 
@@ -103,9 +103,16 @@ span {
 
 /* DESKTOP */
 
+.filter {
+    height: 30px;
+    margin: -15px;
+}
+
 .filter p
 {
-    font-size: 1.5rem;
+    font-size: 1.5em;
+    color: white;
+    line-height: 30px;
 }
 
 .genre
@@ -123,22 +130,20 @@ span {
     background-color: #FCEBA3;
 }
 
+.container {
+    margin-top: 20px;
+}
+
 
 @media (min-width: 400px) {
-    .container, .desktop_genre {
-        padding: 0;
-        margin: 0;
-    }
-
-    .filter-div {
+    .desktop_genre {
         display: block;
-        margin: 0;
         padding: 0;
+        margin-bottom: 80px;
     }
 
-    .filter-div p {
-        margin: 0;
-        padding: 0;
+    .container {
+        margin-top: 0px;
     }
 
     .select-container {

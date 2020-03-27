@@ -50,7 +50,7 @@ body
     font-family: 'texte';
 }
 
-h1, .header_title
+h1
 {
     font-size: 4rem;
     font-family: 'header';
@@ -79,7 +79,7 @@ h3
     background-repeat: no-repeat;
     width: 100%;
     padding: 0;
-    margin-top: 71px;
+    margin-top: 80px;
     height: 100px;
 }
 
@@ -93,7 +93,7 @@ h3
     .header {
         height: 150px;
     }
-    h1, .header_title {
+    .header_title {
         line-height: 150px;
         font-size: 7rem;
     }
@@ -277,9 +277,19 @@ footer p
         display: block;
     }
 
+    .searchbar {
+        display: none;
+    }
+
     footer
     {
         height: 150px;
+    }
+}
+
+@media (min-width: 687px) {
+    .searchbar {
+        display: block;
     }
 }
 

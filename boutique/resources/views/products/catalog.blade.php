@@ -30,21 +30,19 @@
     </div>
 
     <div class="desktop_genre">
-        <div class="row filter-div">
-            <div class="filter genre">
-                <div class="col-12">
-                    <p>Genre</p>
-                </div>
+        <div class="filter genre">
+            <div class="col-12">
+                <p>Genre</p>
             </div>
-            <div class="filter subgenre">
-                <div class="col-12">
-                    <p>Genre</p>
-                </div>
+        </div>
+        <div class="filter subgenre">
+            <div class="">
+                <p>Genre</p>
             </div>
-            <div class="filter most">
-                <div class="col-12">
-                    <p>Genre</p>
-                </div>
+        </div>
+        <div class="filter most">
+            <div class="">
+                <p>Genre</p>
             </div>
         </div>
     </div>
