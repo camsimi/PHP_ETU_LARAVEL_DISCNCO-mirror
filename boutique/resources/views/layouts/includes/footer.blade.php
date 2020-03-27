@@ -1,3 +1,4 @@
+<footer>
     <div class="row">
         <div class="col follow">
             <div>
@@ -10,3 +11,4 @@
             <p>Contact us</p>
         </div>
     </div>
+</footer>

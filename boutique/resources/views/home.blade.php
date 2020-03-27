@@ -7,59 +7,87 @@
 
 @section('content')
 
-<div class="releases category">
-    <h2>NEW RELEASES</h2>
-    <div class ="row carrousel">
-        <button class="col-2 col-lg-1"><img class="arrow " src="{{ asset('media/icons/left_arrow.svg')}}" alt="left arrow"></button>
-        <div class="cover-div col-6 col-lg-4 offset-sm-1">
-            <img class ="cover" src="{{ asset('media/covers/vacuum.jpg')}}" alt="album cover">
-            <section class="mouse_over">
-                <button type="submit"><img class="play" src="{{ asset('media/buttons/play_black.svg')}}"
-                    alt="play button"></button>
-                <button type="submit"><img class="cart" src="{{ asset('media/buttons/cart_button.svg')}}"
-                    alt="add into cart button"></button>
-            </section>
+<div class="container">
+    <div class="releases category">
+        <h2>NEW RELEASES</h2>
+
+        <div id="carouselExampleControls" class="carousel slide carrousel" data-ride="carousel">
+            <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    <img class ="col-lg-4 offset-2 cover" src="{{$newreleases[0]->image}}" alt="album cover">
+                    <section class="col-lg-4 d-none d-sm-block infos">
+                        <p class="album">{{$newreleases[0]->name}}</p>
+                        <p class="artist">{{$newreleases[0]->artist}}</p>
+                        <p class="description">
+                            {{$newreleases[0]->description}}
+                        </p>
+                        <div class="row">
+                            <p class="col prix">{{$newreleases[0]->price}} $</p>
+                            <button class="col" type="submit"><img class="see_more" src="{{ asset('media/buttons/see_more.svg')}}"></button>
+                        </div>
+                    </section>
+                    </div>
+                </div>
+
+            @foreach ($newreleases as $key=>$product)
+                @if ($key!==0)
+                    <div class="carousel-item">
+                        <div class="row">
+                            <img class ="col-lg-4 offset-2 cover" src="{{$product->image}}" alt="album cover">
+                            <section class="col-lg-4 d-none d-sm-block infos">
+                                <p class="album">{{$product->name}}</p>
+                                <p class="artist">{{$product->artist}}</p>
+                                <p class="description">
+                                    {{$product->description}}
+                                </p>
+                                <div class="row">
+                                    <p class="col prix">{{$product->price}} $</p>
+                                    <button class="col" type="submit"><img class="see_more" src="{{ asset('media/buttons/see_more.svg')}}"></button>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                @endif
+            @endforeach
+
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true">
+                <img class="arrow " src="{{ asset('media/icons/left_arrow.svg')}}" alt="left arrow">
+            </span>
+            <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true">
+                <img class="arrow" src="{{ asset('media/icons/right_arrow.svg')}}" alt="right arrow">
+            </span>
+            <span class="sr-only">Next</span>
+            </a>
         </div>
 
-
-        <section class="col-lg-4 d-none d-sm-block infos">
-            <p class="album">Nom de l'album</p>
-            <p class="artist">Nom de l'artiste</p>
-            <p class="description">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
-                 Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-                assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait
-                que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en
-            </p>
-            <div class="row">
-                <p class="col prix">Prix</p>
-                <button class="col" type="submit"><img class="see_more" src="{{ asset('media/buttons/see_more.svg')}}"></button>
-            </div>
-
-        </section>
-        <button class="col-2 col-lg-1 offset-lg-1"><img class="arrow" src="{{ asset('media/icons/right_arrow.svg')}}" alt="right arrow"></button>
     </div>
-</div>
 
-    <div class="mobile pergenre category">
-        <div class="row carrousel">
-            <button class="col"><img class="arrow" src="{{ asset('media/icons/left_arrow.svg')}}" alt="left arrow"></button>
-            <h2 class="col-6">GENRES</h2>
-            <button class="col"><img class="arrow" src="{{ asset('media/icons/right_arrow.svg')}}" alt="right arrow"></button>
-        </div>
-
-        <div class="row week_selection">
-            <div class="col-6 week_album">
-                <section><img class ="cover" src="{{ asset('media/covers/kindofblue.jpg')}}" alt="Album of the week cover"></section>
-                <h3>Album of the week</h3>
+        <div class="mobile pergenre category">
+            <div class="row carrousel">
+                <button class="col"><img class="arrow" src="{{ asset('media/icons/left_arrow.svg')}}" alt="left arrow"></button>
+                <h2 class="col-6">GENRES</h2>
+                <button class="col"><img class="arrow" src="{{ asset('media/icons/right_arrow.svg')}}" alt="right arrow"></button>
             </div>
 
-            <div class="col-6 week_single">
-                <section><img class ="cover" src="{{ asset('media/covers/lovesupreme.jpg')}}" alt="Single of the week cover"></section>
-                <h3>Single of the week</h3>
+            <div class="row week_selection">
+                <div class="col-6 week_album">
+                    <section><img class ="cover" src="{{ asset('media/covers/kindofblue.jpg')}}" alt="Album of the week cover"></section>
+                    <h3>Album of the week</h3>
+                </div>
+
+                <div class="col-6 week_single">
+                    <section><img class ="cover" src="{{ asset('media/covers/lovesupreme.jpg')}}" alt="Single of the week cover"></section>
+                    <h3>Single of the week</h3>
+                </div>
             </div>
-        </div>
-        <div class="row">
-                <button class="col" type="submit"><img src="{{ asset('media/buttons/see_more.svg')}}"></button>
+            <div class="row">
+                    <a class="col-2 offset-6" href=""><img src="{{ asset('media/buttons/see_more.svg')}}"></a>
+            </div>
         </div>
     </div>
 </div>
@@ -83,26 +111,27 @@
             </div>
         </div>
 
-    <div class="container">
-        <div class="selection">
-            <div class="row">
+<div class="container">
+    <div class="selection">
+        <div class="row">
+            @foreach ($catalog as $product)
                 <div class="col-2">
                     <section>
-                        <img class ="cover" src="{{ asset('media/covers/lovesupreme.jpg')}}"
+                        <img class ="cover" src="{{ $product->image }}"
                         alt="Single of the week cover">
                     </section>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-2">
-                    <section>
-                        <img class ="cover" src="{{ asset('media/covers/lovesupreme.jpg')}}"
-                        alt="Single of the week cover">
-                    </section>
-                </div>
-            </div>
+            @endforeach
         </div>
+        <div class="row">
+            <button class="col offset-10" type="submit">
+                <img class="see_more" src="{{ asset('media/buttons/see_more.svg')}}">
+            </button>
+        </div>
+
     </div>
+    </div>
+
 </div>
 
 <div class="container">
