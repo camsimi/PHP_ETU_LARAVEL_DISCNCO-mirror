@@ -16,42 +16,24 @@
 
         <div id="carouselExampleControls" class="carousel slide carrousel" data-ride="carousel">
             <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="row">
-                    <img class ="col-6 offset-3 col-sm-4 offset-sm-2 cover" src="{{$newreleases[0]->image}}" alt="album cover">
-                    <section class="col-lg-4 d-none d-sm-block infos">
-                        <p class="album">{{$newreleases[0]->name}}</p>
-                        <p class="artist">{{$newreleases[0]->artist}}</p>
-                        <p class="description">
-                            {{$newreleases[0]->description}}
-                        </p>
-                        <div class="row">
-                            <p class="col prix">{{$newreleases[0]->price}} $</p>
-                            <button class="col" type="submit"><img class="see_more" src="{{ asset('media/buttons/see_more.svg')}}"></button>
-                        </div>
-                    </section>
-                    </div>
-                </div>
 
             @foreach ($newreleases as $key=>$product)
-                @if ($key!==0)
-                    <div class="carousel-item">
-                        <div class="row">
-                            <img class ="col-6 offset-3 col-sm-4 offset-sm-2 cover" src="{{$product->image}}" alt="album cover">
-                            <section class="col-lg-4 d-none d-sm-block infos">
-                                <p class="album">{{$product->name}}</p>
-                                <p class="artist">{{$product->artist}}</p>
-                                <p class="description">
-                                    {{$product->description}}
-                                </p>
-                                <div class="row">
-                                    <p class="col prix">{{$product->price}} $</p>
-                                    <button class="col" type="submit"><img class="see_more" src="{{ asset('media/buttons/see_more.svg')}}"></button>
-                                </div>
-                            </section>
-                        </div>
+                <div class="{{$key !== 0 ? "carousel-item" : "carousel-item active"}}">
+                    <div class="row">
+                        <img class ="col-6 offset-3 col-sm-4 offset-sm-2 cover" src="{{$product->image}}" alt="album cover">
+                        <section class="col-lg-4 d-none d-sm-block infos">
+                            <p class="album">{{$product->name}}</p>
+                            <p class="artist">{{$product->artist}}</p>
+                            <p class="description">
+                                {{$product->description}}
+                            </p>
+                            <div class="row">
+                                <p class="col prix">{{$product->price}} $</p>
+                                <button class="col" type="submit"><img class="see_more" src="{{ asset('media/buttons/see_more.svg')}}"></button>
+                            </div>
+                        </section>
                     </div>
-                @endif
+                </div>
             @endforeach
 
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
