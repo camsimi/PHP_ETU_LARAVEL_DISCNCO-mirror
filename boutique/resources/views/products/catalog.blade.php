@@ -123,7 +123,7 @@
         <div class="row">
             @foreach ($products as $product)
                 <div class="cover col">
-                    <img class="cover_catalog" src="..{{ $product->image }}" alt="cover image">
+                    <img class="cover_catalog" src="{{ $product->image }}" alt="cover image">
                     <div class="details">
                         <h3 class="h_catalogue">{{ $product->name }}</h3>
                         <h2 class="h_catalogue">{{ $product->artist }}</h2>
@@ -132,50 +132,6 @@
                 </div>
             @endforeach
 
-{{--            <div class="cover col">--}}
-{{--                <img class="cover_catalog" src="http://localhost:8000/media/covers/voyage.jpg" alt="vinyl voyage">--}}
-{{--                <div class="details">--}}
-{{--                    <h3 class="h_catalogue">Spectacular</h3>--}}
-{{--                    <h2 class="h_catalogue">Jah Rise</h2>--}}
-{{--                    <p class="prix">64 euros</p>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-{{--            <div class="cover col">--}}
-{{--                <img class="cover_catalog" src="http://localhost:8000/media/covers/spectacular.png" alt="vinyl spectacular">--}}
-{{--                <div class="details">--}}
-{{--                    <h3 class="h_catalogue">Spectacular</h3>--}}
-{{--                    <h2 class="h_catalogue">Jah Rise</h2>--}}
-{{--                    <p class="prix">64 euros</p>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-{{--            <div class="cover col">--}}
-{{--                <img class="cover_catalog" src="http://localhost:8000/media/covers/voyage.jpg" alt="vinyl voyage">--}}
-{{--                <div class="details">--}}
-{{--                    <h3 class="h_catalogue">Spectacular</h3>--}}
-{{--                    <h2 class="h_catalogue">Jah Rise</h2>--}}
-{{--                    <p class="prix">64 euros</p>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="cover col">--}}
-{{--                <img class="cover_catalog" src="http://localhost:8000/media/covers/spectacular.png" alt="vinyl spectacular">--}}
-{{--                <div class="details">--}}
-{{--                    <h3 class="h_catalogue">Spectacular</h3>--}}
-{{--                    <h2 class="h_catalogue">Jah Rise</h2>--}}
-{{--                    <p class="prix">64 euros</p>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-{{--            <div class="cover col">--}}
-{{--                <img class="cover_catalog" src="http://localhost:8000/media/covers/voyage.jpg" alt="vinyl voyage">--}}
-{{--                <div class="details">--}}
-{{--                    <h3 class="h_catalogue">Spectacular</h3>--}}
-{{--                    <h2 class="h_catalogue">Jah Rise</h2>--}}
-{{--                    <p class="prix">64 euros</p>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
 
 {{--    </div>--}}
 
