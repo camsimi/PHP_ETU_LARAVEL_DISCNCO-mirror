@@ -4,6 +4,7 @@
 
 @endsection
 @section('content')
+<div class="container">
     <div class="container d-lg-inline-flex justify-content-lg-around">
         <div>
             <img src="{{ asset('media/images/turntable.png')}}" alt="turntable">
@@ -30,6 +31,7 @@
             </div>
         </div>
     </div>
+</div>
 @endsection
 
 @section('header')

@@ -18,7 +18,7 @@
             <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="row">
-                    <img class ="col-lg-4 offset-2 cover" src="{{$newreleases[0]->image}}" alt="album cover">
+                    <img class ="col-6 offset-3 col-sm-4 offset-sm-2 cover" src="{{$newreleases[0]->image}}" alt="album cover">
                     <section class="col-lg-4 d-none d-sm-block infos">
                         <p class="album">{{$newreleases[0]->name}}</p>
                         <p class="artist">{{$newreleases[0]->artist}}</p>
@@ -37,7 +37,7 @@
                 @if ($key!==0)
                     <div class="carousel-item">
                         <div class="row">
-                            <img class ="col-lg-4 offset-2 cover" src="{{$product->image}}" alt="album cover">
+                            <img class ="col-6 offset-3 col-sm-4 offset-sm-2 cover" src="{{$product->image}}" alt="album cover">
                             <section class="col-lg-4 d-none d-sm-block infos">
                                 <p class="album">{{$product->name}}</p>
                                 <p class="artist">{{$product->artist}}</p>
@@ -95,27 +95,26 @@
     </div>
 </div>
 
-    <div class="desktop pergenre category">
-        <div class="filter-div">
-            <div class="row filter genre">
-                <div class="col-8 offset-2">
-                    <p>Genre</p>
-                </div>
-            </div>
-            <div class="row filter subgenre">
-                <div class="col-8 offset-2">
-                    <p>Genre</p>
-                </div>
-            </div>
-            <div class="row filter most">
-                <div class="col-8 offset-2">
-                    <p>Genre</p>
-                </div>
+    <div class="desktop filter-div">
+        <div class="row filter genre">
+            <div class="col-8 offset-2">
+                <p>Genre</p>
             </div>
         </div>
+        <div class="row filter subgenre">
+            <div class="col-8 offset-2">
+                <p>Genre</p>
+            </div>
+        </div>
+        <div class="row filter most">
+            <div class="col-8 offset-2">
+                <p>Genre</p>
+            </div>
+        </div>
+    </div>
 
 <div class="container">
-    <div class="selection">
+    <div class="selection desktop">
         <div class="row">
             @foreach ($catalog as $product)
                 <div class="col-2">

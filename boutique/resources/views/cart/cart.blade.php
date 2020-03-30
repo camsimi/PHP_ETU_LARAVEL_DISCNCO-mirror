@@ -4,8 +4,8 @@
 @section('css')
     <link href="{{ asset('css/style_cart.css') }}" rel="stylesheet">
 @endsection
-<<<<<<< HEAD
 @section('content')
+<div class="container">
     <div>
         <div>Article:</div>
         <div>Prix</div>
@@ -33,13 +33,5 @@
 
         </div>
     </div>
-
-=======
-
-@section('header')
-    @parent
-@endsection
-
-@section('content')
->>>>>>> e0fc1c8de12a3f6cde6506a0d47dffecfd851a92
+</div>
 @endsection

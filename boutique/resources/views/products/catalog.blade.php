@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-
+<div class="container">
     <div class="select-container">
         <label for="select-genre"></label>
         <div class="row col-sm-6 select-genre-bloc">
@@ -156,6 +156,7 @@
         </div>
 
     </div>
+</div>
 
 {{--    <div>--}}
 {{--        <div class="genres_line genre1">--}}
