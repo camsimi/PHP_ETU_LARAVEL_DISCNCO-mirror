@@ -2,7 +2,7 @@
 
 @section('page_title', 'CATALOG')
 @section('css')
-<link href="{{ asset('css/style_products.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style_products.css') }}" rel="stylesheet">
 @endsection
 
 @section('header')
@@ -71,7 +71,9 @@
         <div class="week_bloc row">
             <div class="bloc_pochette blocw col-8">
                 <h3 class="week_title">Single de la semaine</h3>
-                <img src="http://localhost:8000/media/covers/single.jpg" alt="single de la semaine" class="pochette">
+                <a href="product">
+                    <img src="{{ asset('media/covers/single.jpg')}}" alt="single de la semaine" class="pochette">
+                </a>
             </div>
             <div class="infos blocw col-4">
                     <h2>Title</h2>
@@ -81,12 +83,12 @@
                 <br>
                 <div class="buttons_catalog">
                     <a href="">
-                        <img class="button play_button" src="http://localhost:8000/media/buttons/play_black.svg" alt="écouter un extrait">
+                        <img class="button play_button" src="{{ asset('media/buttons/play_black.svg')}}" alt="écouter un extrait">
                     </a>
                 </div>
                 <div class="buttons_catalog">
                     <form action="" method="">
-                      <input class="button" type="image" id="image" alt="ajout au panier" src="http://localhost:8000/media/buttons/cart_button.svg">
+                      <input class="button" type="image" id="image" alt="ajout au panier" src="{{ asset('media/buttons/cart_button.svg')}}">
                     </form>
                 </div>
             </div>
@@ -95,7 +97,9 @@
         <div class="week_bloc row">
             <div class="bloc_pochette blocw col-8">
                 <h3 class="week_title">Album de la semaine</h3>
-                <img src="http://localhost:8000/media/covers/album.jpg" alt="album de la semaine" class="pochette">
+                <a href="product">
+                    <img src="{{ asset('media/covers/album.jpg')}}" alt="album de la semaine" class="pochette">
+                </a>
             </div>
             <div class="infos blocw col-4">
                 <h2 class="">Title</h2>
@@ -105,12 +109,12 @@
                 <br>
                 <div class="buttons_catalog">
                     <a href="">
-                        <img class="button" src="http://localhost:8000/media/buttons/play_black.svg" alt="écouter un extrait" class="">
+                        <img class="button" src="{{ asset('media/buttons/play_black.svg')}}" alt="écouter un extrait" class="">
                     </a>
                 </div>
                 <div class="buttons_catalog">
                     <form action="" method="">
-                       <input class="button" type="image" id="image" alt="ajout au panier" src="http://localhost:8000/media/buttons/cart_button.svg">
+                       <input class="button" type="image" id="image" alt="ajout au panier" src="{{ asset('media/buttons/cart_button.svg')}}">
                     </form>
                 </div>
             </div>
@@ -123,7 +127,9 @@
         <div class="row">
             @foreach ($products as $product)
                 <div class="cover col">
-                    <img class="cover_catalog" src="{{ $product->image }}" alt="cover image">
+                    <a href="product/{{$product->id}}">
+                        <img class="cover_catalog" src="{{ $product->image }}" alt="cover image">
+                    </a>
                     <div class="details">
                         <h3 class="h_catalogue">{{ $product->name }}</h3>
                         <h2 class="h_catalogue">{{ $product->artist }}</h2>

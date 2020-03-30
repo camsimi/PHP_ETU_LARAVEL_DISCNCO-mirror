@@ -15,8 +15,9 @@ class ProductController extends Controller {
     }
 
 //    Afficher un produit
-//    public function show($id) {
-//        $product = DB::select('select * from products WHERE id = :id', ['id' => $id]);
-//        return view('products.product', ['product' => $product]);
-//    }
+    public function show($id) {
+        $product = DB::select('select * from products WHERE id = :id', ['id' => $id]);
+//        dd($product);
+        return view('products.product', ['product' => $product[0]]);
+    }
 }

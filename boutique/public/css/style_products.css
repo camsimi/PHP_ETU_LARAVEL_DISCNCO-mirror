@@ -142,6 +142,9 @@ span {
 .container {
     margin-top: 20px;
 }
+.container .product {
+    margin-top: 71px;
+}
 
 
 @media (min-width: 400px) {
@@ -151,10 +154,6 @@ span {
         margin: 0;
         margin-bottom: 80px;
         width: 100%;
-    }
-
-    .container {
-        margin-top: 0px;
     }
 
     .select-container {

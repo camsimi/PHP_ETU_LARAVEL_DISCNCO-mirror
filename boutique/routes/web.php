@@ -17,13 +17,13 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/catalog', function () {
-    return view('products.catalog');
-});
-
-Route::get('/product', function () {
-    return view('products.product');
-});
+//Route::get('/catalog', function () {
+//    return view('products.catalog');
+//});
+//
+//Route::get('/product', function () {
+//    return view('products.product');
+//});
 
 Route::get('/cart', function () {
     return view('cart.cart');
@@ -31,4 +31,5 @@ Route::get('/cart', function () {
 
 Route::get('/products', 'ProductController@index');
 
-Route::get('/products/{productID}', 'ProductController@show');
+Route::get('/product/{id}', 'ProductController@show');
+
