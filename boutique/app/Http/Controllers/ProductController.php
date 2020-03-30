@@ -9,13 +9,27 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
-    //
-    // public function index()
-    // {
-    //     $catalog = \App\Product::all();
 
-    //     return view('product.catalog', compact('catalog'));
-    // }
+    public function index()
+    {
+        $catalog = \App\Product::orderBy('name', 'ASC')->get();
+
+        return view('products.catalog', ['catalog' => $catalog]);
+    }
+
+    public function index_prix()
+    {
+        $catalog = \App\Product::orderBy('price', 'ASC')->get();
+
+        return view('products.catalog', ['catalog' => $catalog]);
+    }
+
+    public function show($id)
+    {
+        $product = \App\Product::find($id);
+
+        return view('products.product' , ['product' => $product]);
+    }
 
     public function index_home()
     {
@@ -24,17 +38,4 @@ class ProductController extends Controller
         return view('home', compact('catalog'), compact('newreleases'));
     }
 
-    public function raw_catalog()
-    {
-        $products_raw = DB::select('select * from products');
-
-        return view ('test', ['products' => $products_raw]);
-    }
-
-    public function raw_product()
-    {
-        $product_raw = DB::select('select * from products where id=?', [1]);
-
-        return view ('products/1', ['product' => $product_raw]);
-    }
 }

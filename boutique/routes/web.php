@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,19 +20,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'ProductController@index_home');
 
-Route::get('/catalog', function () {
-    return view('products.catalog');
-});
+Route::get('/catalog', 'ProductController@index');
 
-Route::get('/product', function () {
-    return view('products.product');
-});
+Route::get('/catalog_test', 'ProductController@index_prix');
+
+Route::get('/products/{id}', 'ProductController@show');
 
 Route::get('/cart', function () {
     return view('cart.cart');
 });
-
-Route::get('/test', 'ProductController@raw_catalog');
-
-Route::get('products/1', 'ProductController@raw_product');
 

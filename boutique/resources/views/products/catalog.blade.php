@@ -10,7 +10,6 @@
 @endsection
 
 @section('content')
-<div class="container">
     <div class="select-container">
         <label for="select-genre"></label>
         <div class="row col-sm-6 select-genre-bloc">
@@ -47,16 +46,20 @@
         </div>
     </div>
 
+@php
+@endphp
+
+<div class="container">
     <div class="week">
             <div class="week_bloc row">
-                <div class="bloc_pochette blocw col-8">
+                <div class="bloc_pochette blocw col-8 col-sm-4">
                     <h3 class="week_title">Single de la semaine</h3>
-                    <img src="http://localhost:8000/media/covers/single.jpg" alt="single de la semaine" class="pochette">
+                    <img src="{{$catalog[0]->image}}" alt="single de la semaine" class="pochette">
                 </div>
                 <div class="infos blocw col-4">
-                    <h2>Title</h2>
-                    <p>C’est une super description de la mort qui tue sur un single de la semaine qui a bien était vendu et écouté !</p>
-                    <span><strong>12 euros</strong></span>
+                    <h2>{{$catalog[0]->name}}</h2>
+                    <p>{{$catalog[0]->description}}</p>
+                    <span><strong>{{$catalog[0]->price}} $</strong></span>
                     <br>
                     <br>
                     <div class="buttons_catalog">
@@ -73,14 +76,14 @@
         </div>
 
         <div class="week_bloc row">
-            <div class="bloc_pochette blocw col-8">
+            <div class="bloc_pochette blocw col-8 col-sm-4">
                 <h3 class="week_title">Album de la semaine</h3>
-                <img src="http://localhost:8000/media/covers/album.jpg" alt="album de la semaine" class="pochette">
+                <img src="{{$catalog[1]->image}}" alt="album de la semaine" class="pochette">
             </div>
             <div class="infos blocw col-4">
-                <h2 class="">Title</h2>
-                <p class="description">C’est une super description de la mort qui tue sur un single de la semaine qui a bien était vendu et écouté !</p>
-                <span><strong>25 euros</strong></span>
+                <h2 class="">{{$catalog[1]->name}}</h2>
+                <p class="description">{{$catalog[1]->description}}</p>
+                <span><strong>{{$catalog[1]->price}}</strong></span>
                 <br>
                 <br>
                 <div class="buttons_catalog">
@@ -101,75 +104,18 @@
 
     <div class="catalog">
         <div class="row">
-            <div class="cover col">
-                <img class="cover_catalog" src="http://localhost:8000/media/covers/spectacular.png" alt="vinyl spectacular">
-                <div class="details">
-                    <h3 class="h_catalogue">Spectacular</h3>
-                    <h2 class="h_catalogue">Jah Rise</h2>
-                    <p class="prix">64 euros</p>
+            @foreach ($catalog as $product)
+                <div class="cover col-6 col-sm-2">
+                    <img class="cover_catalog" src="{{$product->image}}" alt="vinyl spectacular">
+                    <div class="details">
+                        <a href="/products/{{$product->id}}"><h3 class="h_catalogue">{{$product->name}}</h3></a>
+                        <h2 class="h_catalogue">{{$product->artist}}</h2>
+                        <p class="prix">{{$product->price}}</p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="cover col">
-                <img class="cover_catalog" src="http://localhost:8000/media/covers/voyage.jpg" alt="vinyl voyage">
-                <div class="details">
-                    <h3 class="h_catalogue">Spectacular</h3>
-                    <h2 class="h_catalogue">Jah Rise</h2>
-                    <p class="prix">64 euros</p>
-                </div>
-            </div>
-
-            <div class="cover col">
-                <img class="cover_catalog" src="http://localhost:8000/media/covers/spectacular.png" alt="vinyl spectacular">
-                <div class="details">
-                    <h3 class="h_catalogue">Spectacular</h3>
-                    <h2 class="h_catalogue">Jah Rise</h2>
-                    <p class="prix">64 euros</p>
-                </div>
-            </div>
-
-            <div class="cover col">
-                <img class="cover_catalog" src="http://localhost:8000/media/covers/voyage.jpg" alt="vinyl voyage">
-                <div class="details">
-                    <h3 class="h_catalogue">Spectacular</h3>
-                    <h2 class="h_catalogue">Jah Rise</h2>
-                    <p class="prix">64 euros</p>
-                </div>
-            </div>
-            <div class="cover col">
-                <img class="cover_catalog" src="http://localhost:8000/media/covers/spectacular.png" alt="vinyl spectacular">
-                <div class="details">
-                    <h3 class="h_catalogue">Spectacular</h3>
-                    <h2 class="h_catalogue">Jah Rise</h2>
-                    <p class="prix">64 euros</p>
-                </div>
-            </div>
-
-            <div class="cover col">
-                <img class="cover_catalog" src="http://localhost:8000/media/covers/voyage.jpg" alt="vinyl voyage">
-                <div class="details">
-                    <h3 class="h_catalogue">Spectacular</h3>
-                    <h2 class="h_catalogue">Jah Rise</h2>
-                    <p class="prix">64 euros</p>
-                </div>
-            </div>
+            @endforeach
         </div>
-
     </div>
 </div>
-
-{{--    <div>--}}
-{{--        <div class="genres_line genre1">--}}
-
-{{--        </div>--}}
-
-{{--        <div class="genres_line genre2">--}}
-
-{{--        </div>--}}
-
-{{--        <div class="genres_line genre3">--}}
-
-{{--        </div>--}}
-{{--    </div>--}}
 
 @endsection
