@@ -68,28 +68,28 @@
 
 
     <div class="week">
-            <div class="week_bloc row">
-                <div class="bloc_pochette blocw col-8">
-                    <h3 class="week_title">Single de la semaine</h3>
-                    <img src="http://localhost:8000/media/covers/single.jpg" alt="single de la semaine" class="pochette">
-                </div>
-                <div class="infos blocw col-4">
+        <div class="week_bloc row">
+            <div class="bloc_pochette blocw col-8">
+                <h3 class="week_title">Single de la semaine</h3>
+                <img src="http://localhost:8000/media/covers/single.jpg" alt="single de la semaine" class="pochette">
+            </div>
+            <div class="infos blocw col-4">
                     <h2>Title</h2>
-                    <p>C’est une super description de la mort qui tue sur un single de la semaine qui a bien était vendu et écouté !</p>
-                    <span><strong>12 euros</strong></span>
-                    <br>
-                    <br>
-                    <div class="buttons_catalog">
-                        <a href="">
-                            <img class="button play_button" src="http://localhost:8000/media/buttons/play_black.svg" alt="écouter un extrait">
-                        </a>
-                    </div>
-                    <div class="buttons_catalog">
-                        <form action="" method="">
-                          <input class="button" type="image" id="image" alt="ajout au panier" src="http://localhost:8000/media/buttons/cart_button.svg">
-                        </form>
-                    </div>
+                <p>C’est une super description de la mort qui tue sur un single de la semaine qui a bien était vendu et écouté !</p>
+                <span><strong>10 euros</strong></span>
+                <br>
+                <br>
+                <div class="buttons_catalog">
+                    <a href="">
+                        <img class="button play_button" src="http://localhost:8000/media/buttons/play_black.svg" alt="écouter un extrait">
+                    </a>
                 </div>
+                <div class="buttons_catalog">
+                    <form action="" method="">
+                      <input class="button" type="image" id="image" alt="ajout au panier" src="http://localhost:8000/media/buttons/cart_button.svg">
+                    </form>
+                </div>
+            </div>
         </div>
 
         <div class="week_bloc row">
@@ -121,61 +121,63 @@
 
     <div class="catalog">
         <div class="row">
-            <div class="cover col">
-                <img class="cover_catalog" src="http://localhost:8000/media/covers/spectacular.png" alt="vinyl spectacular">
-                <div class="details">
-                    <h3 class="h_catalogue">Spectacular</h3>
-                    <h2 class="h_catalogue">Jah Rise</h2>
-                    <p class="prix">64 euros</p>
+            @foreach ($products as $product)
+                <div class="cover col">
+                    <img class="cover_catalog" src="..{{ $product->image }}" alt="cover image">
+                    <div class="details">
+                        <h3 class="h_catalogue">{{ $product->name }}</h3>
+                        <h2 class="h_catalogue">{{ $product->artist }}</h2>
+                        <p class="prix">{{ $product->price }} euros</p>
+                    </div>
                 </div>
-            </div>
+            @endforeach
 
-            <div class="cover col">
-                <img class="cover_catalog" src="http://localhost:8000/media/covers/voyage.jpg" alt="vinyl voyage">
-                <div class="details">
-                    <h3 class="h_catalogue">Spectacular</h3>
-                    <h2 class="h_catalogue">Jah Rise</h2>
-                    <p class="prix">64 euros</p>
-                </div>
-            </div>
+{{--            <div class="cover col">--}}
+{{--                <img class="cover_catalog" src="http://localhost:8000/media/covers/voyage.jpg" alt="vinyl voyage">--}}
+{{--                <div class="details">--}}
+{{--                    <h3 class="h_catalogue">Spectacular</h3>--}}
+{{--                    <h2 class="h_catalogue">Jah Rise</h2>--}}
+{{--                    <p class="prix">64 euros</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="cover col">
-                <img class="cover_catalog" src="http://localhost:8000/media/covers/spectacular.png" alt="vinyl spectacular">
-                <div class="details">
-                    <h3 class="h_catalogue">Spectacular</h3>
-                    <h2 class="h_catalogue">Jah Rise</h2>
-                    <p class="prix">64 euros</p>
-                </div>
-            </div>
+{{--            <div class="cover col">--}}
+{{--                <img class="cover_catalog" src="http://localhost:8000/media/covers/spectacular.png" alt="vinyl spectacular">--}}
+{{--                <div class="details">--}}
+{{--                    <h3 class="h_catalogue">Spectacular</h3>--}}
+{{--                    <h2 class="h_catalogue">Jah Rise</h2>--}}
+{{--                    <p class="prix">64 euros</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="cover col">
-                <img class="cover_catalog" src="http://localhost:8000/media/covers/voyage.jpg" alt="vinyl voyage">
-                <div class="details">
-                    <h3 class="h_catalogue">Spectacular</h3>
-                    <h2 class="h_catalogue">Jah Rise</h2>
-                    <p class="prix">64 euros</p>
-                </div>
-            </div>
-            <div class="cover col">
-                <img class="cover_catalog" src="http://localhost:8000/media/covers/spectacular.png" alt="vinyl spectacular">
-                <div class="details">
-                    <h3 class="h_catalogue">Spectacular</h3>
-                    <h2 class="h_catalogue">Jah Rise</h2>
-                    <p class="prix">64 euros</p>
-                </div>
-            </div>
+{{--            <div class="cover col">--}}
+{{--                <img class="cover_catalog" src="http://localhost:8000/media/covers/voyage.jpg" alt="vinyl voyage">--}}
+{{--                <div class="details">--}}
+{{--                    <h3 class="h_catalogue">Spectacular</h3>--}}
+{{--                    <h2 class="h_catalogue">Jah Rise</h2>--}}
+{{--                    <p class="prix">64 euros</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="cover col">--}}
+{{--                <img class="cover_catalog" src="http://localhost:8000/media/covers/spectacular.png" alt="vinyl spectacular">--}}
+{{--                <div class="details">--}}
+{{--                    <h3 class="h_catalogue">Spectacular</h3>--}}
+{{--                    <h2 class="h_catalogue">Jah Rise</h2>--}}
+{{--                    <p class="prix">64 euros</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="cover col">
-                <img class="cover_catalog" src="http://localhost:8000/media/covers/voyage.jpg" alt="vinyl voyage">
-                <div class="details">
-                    <h3 class="h_catalogue">Spectacular</h3>
-                    <h2 class="h_catalogue">Jah Rise</h2>
-                    <p class="prix">64 euros</p>
-                </div>
-            </div>
-        </div>
+{{--            <div class="cover col">--}}
+{{--                <img class="cover_catalog" src="http://localhost:8000/media/covers/voyage.jpg" alt="vinyl voyage">--}}
+{{--                <div class="details">--}}
+{{--                    <h3 class="h_catalogue">Spectacular</h3>--}}
+{{--                    <h2 class="h_catalogue">Jah Rise</h2>--}}
+{{--                    <p class="prix">64 euros</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
-    </div>
+{{--    </div>--}}
 
 {{--    <div>--}}
 {{--        <div class="genres_line genre1">--}}

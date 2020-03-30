@@ -29,3 +29,6 @@ Route::get('/cart', function () {
     return view('cart.cart');
 });
 
+Route::get('/products', 'ProductController@index');
+
+Route::get('/products/{productID}', 'ProductController@show');
