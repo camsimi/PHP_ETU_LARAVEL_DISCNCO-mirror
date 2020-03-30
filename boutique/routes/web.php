@@ -31,3 +31,7 @@ Route::get('/cart', function () {
     return view('cart.cart');
 });
 
+Route::get('/test', 'ProductController@raw_catalog');
+
+Route::get('products/1', 'ProductController@raw_product');
+
