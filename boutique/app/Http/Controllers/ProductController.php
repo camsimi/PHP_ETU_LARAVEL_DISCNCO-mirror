@@ -13,7 +13,10 @@ class ProductController extends Controller {
 
 //    Afficher tous les produits du catalogue
     public function index() {
-        $products = Products::get();
+//        $products = Products::get();
+//        $products = Products::orderBy('price', 'asc')->get();
+        
+        $products = Products::orderBy('name', 'asc')->get();
         return view ('products.catalog', ['products' => $products]);
     }
 
