@@ -270,11 +270,16 @@ footer p
     .mobile
     {
         display: none;
-
     }
+
     .desktop
     {
         display: block;
+    }
+
+    .container
+    {
+        margin-top: 15px;
     }
 
     .searchbar {

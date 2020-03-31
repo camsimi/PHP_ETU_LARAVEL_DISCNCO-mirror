@@ -20,11 +20,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'ProductController@index_home');
 
-Route::get('/catalog', 'ProductController@index');
+Route::resource('products', 'ProductController');
 
-Route::get('/catalog_test', 'ProductController@index_prix');
-
-Route::get('/products/{id}', 'ProductController@show');
+// Route::get('/catalog', 'ProductController@index');
+// Route::get('/products/create', 'ProductController@create');
+// Route::post('products', 'ProductController@store');
+// Route::get('/products/{id}', 'ProductController@show');
 
 Route::get('/cart', function () {
     return view('cart.cart');

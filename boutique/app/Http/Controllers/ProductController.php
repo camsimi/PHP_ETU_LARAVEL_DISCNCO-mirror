@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Product;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+
 
 class ProductController extends Controller
 {
@@ -15,21 +15,52 @@ class ProductController extends Controller
     public function index()
     {
         $catalog = Product::orderBy('name', 'ASC')->get();
+        $catalog_price = $catalog->sortBy('price');
 
-        return view('products.catalog', ['catalog' => $catalog]);
+        return view('products.catalog', ['catalog' => $catalog, 'catalog_price' => $catalog_price]);
     }
 
-    public function index_prix()
+    public function create()
     {
-        $catalog = Product::orderBy('price', 'ASC')->get();
-
-        return view('products.catalog', ['catalog' => $catalog]);
+        return view('products.add-product');
     }
 
-    public function show(Product $product)
+    public function store(Request $request)
     {
-        
-        return view('products.product' , ['product' => $product]);
+        $product = new Product;
+        $product->name = $request->name;
+        $product->artist = $request->artis;
+        $product->price = $request->price;
+
+        $product->save();
+
+        return view('products.confirm-save-product', ['product' => $product]);
+    }
+
+    public function show($id)
+    {
+        return view('products.product' , ['product' => Product::findOrFail($id)]);
+    }
+
+    public function edit($id)
+    {
+        return view('products.edit-product', ['product' => Product::findOrFail($id)]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $product = Product::find($id);
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->save();
+
+        return view('products.confirm-edit-product', ['product' => Product::findOrFail($id)]);
+    }
+
+
+    public function destroy($id)
+    {
+        //
     }
 
     public function index_home()
@@ -38,5 +69,4 @@ class ProductController extends Controller
         $newreleases = Product::orderBy('created_at', 'DESC')->get()->take(10);
         return view('home', ['catalog' => $catalog,'newreleases' => $newreleases]);
     }
-
 }

@@ -1,12 +1,10 @@
-@extends('../layouts.app')
+@extends('layouts.app')
 
 @section('page_title', 'Home')
 @section('css')
 <link href="{{ asset('css/style_home.css') }}" rel="stylesheet">
 @endsection
 
-@section('header')
-@endsection
 
 @section('content')
 
