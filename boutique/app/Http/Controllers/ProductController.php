@@ -7,30 +7,47 @@ use App\Products;
 use App\Http\Controllers\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use function GuzzleHttp\Promise\all;
+Use Illuminate\Http\Request;
 
 
-class ProductController extends Controller {
+class ProductController extends Controller
+{
 
 //    Afficher tous les produits du catalogue
-    public function index() {
+    public function index()
+    {
 //        $products = Products::get();
 //        $products = Products::orderBy('price', 'asc')->get();
-        
+
         $products = Products::orderBy('name', 'asc')->get();
-        return view ('products.catalog', ['products' => $products]);
+        return view('products.catalog', ['products' => $products]);
     }
 
 //    Afficher un produit
-    public function show($id) {
-        $product = Products::where('id', $id)->get();
+    public function show($id)
+    {
+        $product = Products::where('id', $id)->firstOrFail();
 
-//        S'il l'id ne correspond à aucun produit, affiche le message d'erreur 404
-        if(empty($product)) {
-            abort(404);
-        }
 //        Sinon, affiche la vue product et retourne l'index 0 du tableau d'objet $product
-        else {
-            return view('products.product', ['product' => $product[0]]);
-        }
+        return view('products.product', ['product' => $product]);
     }
+
+//    Formulaire de soumission d'un nouveau produit
+    public function create()
+    {
+        $product = Products::create('');
+        return view('products.add-product');
+    }
+
+//    Sauvegarder en BDD un nouveau produit
+    public function store() {
+        return view('products.confirm-save-product');
+    }
+
+//    Afficher le formulaire de mise à jour d'un produit
+    public function edit() {
+        return view('products.edit-product.blade.php');
+    }
+
+
 }
