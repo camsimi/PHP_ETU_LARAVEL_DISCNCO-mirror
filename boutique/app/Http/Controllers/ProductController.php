@@ -3,21 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use App\Products;
 use App\Http\Controllers\Controller;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use function GuzzleHttp\Promise\all;
 
 
 class ProductController extends Controller {
 
 //    Afficher tous les produits du catalogue
     public function index() {
-        $products = DB::select('select * from products');
+        $products = Products::get();
         return view ('products.catalog', ['products' => $products]);
     }
 
 //    Afficher un produit
     public function show($id) {
-        $product = DB::select('select * from products WHERE id = :id', ['id' => $id]);
-//        dd($product);
-        return view('products.product', ['product' => $product[0]]);
+        $product = Products::where('id', $id)->get();
+
+//        S'il l'id ne correspond à aucun produit, affiche le message d'erreur 404
+        if(empty($product)) {
+            abort(404);
+        }
+//        Sinon, affiche la vue product et retourne l'index 0 du tableau d'objet $product
+        else {
+            return view('products.product', ['product' => $product[0]]);
+        }
     }
 }
