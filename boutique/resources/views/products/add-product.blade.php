@@ -18,7 +18,7 @@
                     <input type="text" name="price" placeholder="Prix en euros"/><strong
                         class="text-danger"></strong> <br>
                     <br>
-                    <input type="file" name="monfichier"/> <strong
+                    <input type="file" name="image"/> <strong
                         class="text-danger"></strong> <br> <br>
                     <button type="submit" value="submit">Valider</button>
                     <br>

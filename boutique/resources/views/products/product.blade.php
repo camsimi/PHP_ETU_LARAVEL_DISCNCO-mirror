@@ -33,6 +33,12 @@
         </div>
     </div>
 
+    <div>
+        <a href="/product/{{$product->id}}/edit">
+            <button type="submit">Modifier le produit</button>
+        </a>
+    </div>
+
 @endsection
 
 @section('header')

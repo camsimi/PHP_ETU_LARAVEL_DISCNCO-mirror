@@ -47,21 +47,27 @@ class ProductController extends Controller
 //        $product->save();
         $request->validate(['name' => 'required', 'price' => 'required']);
         Products::create($request->all());
-//        dd($request);
         return view('products.confirm-save-product', ['request' => $request]);
     }
 
 //    Afficher le formulaire de mise à jour d'un produit
-    public function edit() {
-
-        return view('products.edit-product.blade.php');
+    public function edit($id) {
+        $product = Products::where('id', $id)->firstOrFail();
+        return view('products.edit-product', ['product' => $product]);
     }
 
-    public function update() {
-        return view ('products.confirm-edit-product');
+    public function update(Request $request, $id) {
+        $request->validate(['name' => 'required', 'price' => 'required']);
+        $product = Products::find($id);
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->save();
+
+        return redirect('/products');
     }
 
-    public function destroy() {
-        return view('products.confirm-delete-product');
+    public function destroy($id) {
+        Products::find($id)->delete();
+        return redirect('/products');
     }
 }
