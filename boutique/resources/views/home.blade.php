@@ -107,6 +107,7 @@
                             alt="Single of the week cover">
                         </a>
                         <div class="overlay d-flex">
+                            <p>{{$product->genre->name}}</p>
                             <button>
                                 <img class="button play_button" src="{{asset('media/buttons/play_black.svg')}}" alt="écouter un extrait">
                             </button>

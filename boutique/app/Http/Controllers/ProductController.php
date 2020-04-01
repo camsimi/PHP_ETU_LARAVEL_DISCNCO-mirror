@@ -71,9 +71,9 @@ class ProductController extends Controller
     public function index_home()
     {
         $catalog = Product::with('genre')->get();
-        $newreleases = Product::orderBy('created_at', 'DESC')->get()->take(10);
-
+        $newreleases = $catalog->sortByDesc('created_at');
         $genres = Genre::pluck('name', 'id');
+
         return view('home', ['catalog' => $catalog,'newreleases' => $newreleases, 'genres' => $genres]);
     }
 

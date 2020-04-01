@@ -3,6 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Genre;
+use App\Cart;
+use App\Subgenre;
+use App\Order;
 
 class Product extends Model
 {
@@ -10,6 +14,23 @@ class Product extends Model
 
     public function genre()
     {
-        return $this->belongsTo('App\Genre');
+        return $this->belongsTo(Genre::class);
     }
+
+    public function carts()
+    {
+        return $this->belongsToMany(Cart::class)->withPivot('quantity');
+    }
+
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class)->withPivot('quantity');
+    }
+
+    public function subgenre()
+    {
+        return $this->belongsTo(Subgenre::class);
+    }
+
+
 }

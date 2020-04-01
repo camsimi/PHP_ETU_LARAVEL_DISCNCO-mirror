@@ -22,7 +22,7 @@ Route::get('/', 'ProductController@index_home');
 Route::get('/products/manage', 'ProductController@index_manage');
 Route::resource('products', 'ProductController');
 
-Route::get('/test', 'ProductController@test');
+Route::get('/test', 'ClientController@index');
 
 Route::get('/cart', function () {
     return view('cart.cart');
