@@ -10,46 +10,65 @@
 @endsection
 
 @section('content')
-    <div class="select-container">
-        <label for="select-genre"></label>
-        <div class="row col-sm-6 select-genre-bloc">
-            <select name="genres" id="select-genre" class="select-case">
-                <option value="">Genre</option>
-                <option value="rock">Rock</option>
-                <option value="jazz">Jazz</option>
-                <option value="rap">Rap</option>
-                <option value="soul">Soul</option>
-                <option value="funk">Funk</option>
-                <option value="hiphop">Hip Hop</option>
-                <option value="chanson">Chanson</option>
-                <option value="pop">Pop</option>
-                <option value="classic">Classic</option>
-            </select>
+
+<div class="desktop filter-div">
+    <div class="row filter genre">
+        <div class="col-8 offset-2">
+            <p>Genre</p>
         </div>
     </div>
-
-    <div class="desktop_genre">
-        <div class="filter genre">
-            <div class="col-12">
-                <p>Genre</p>
-            </div>
-        </div>
-        <div class="filter subgenre">
-            <div class="">
-                <p>Genre</p>
-            </div>
-        </div>
-        <div class="filter most">
-            <div class="">
-                <p>Genre</p>
-            </div>
+    <div class="row filter subgenre">
+        <div class="col-8 offset-2">
+            <p>Genre</p>
         </div>
     </div>
-
-@php
-@endphp
+    <div class="row filter most">
+        <div class="col-8 offset-2">
+            <p>Genre</p>
+        </div>
+    </div>
+</div>
 
 <div class="container">
+    <div class="selection desktop">
+        <div class="cover-card col-4">
+            <a href="{{url('products', [$catalog[0]->id])}}"">
+                <img class ="cover" src="{{asset($catalog[0]->image) }}"
+                alt="Single of the week cover">
+            </a>
+            <div class="overlay d-flex">
+                <button>
+                    <img class="button play_button" src="{{asset('media/buttons/play_black.svg')}}" alt="écouter un extrait">
+                </button>
+                <button>
+                    <img class="button cart_button" src="{{asset('media/buttons/cart_button.svg')}}" alt="add to cart">
+                </button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                @foreach ($catalog as $key=>$product)
+                @if ($key !==0)
+                    <div class="cover-card col-2">
+                        <a href="{{url('products', [$product->id])}}"">
+                            <img class ="cover" src="{{asset($product->image) }}"
+                            alt="Single of the week cover">
+                        </a>
+                        <div class="overlay d-flex">
+                            <button>
+                                <img class="button play_button" src="{{asset('media/buttons/play_black.svg')}}" alt="écouter un extrait">
+                            </button>
+                            <button>
+                                <img class="button cart_button" src="{{asset('media/buttons/cart_button.svg')}}" alt="add to cart">
+                            </button>
+                        </div>
+                    </div>
+                    @endif
+                @endforeach
+            </div>
+        </div>
+    </div>
+
     <div class="week">
             <div class="week_bloc row">
                 <div class="bloc_pochette blocw col-8 col-sm-4">

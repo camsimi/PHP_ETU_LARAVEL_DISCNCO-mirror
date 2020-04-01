@@ -36,6 +36,19 @@ html
     font-size: 62.5%;
     font-family: 'texte';
     overflow-x: hidden;
+    height: 100%;
+}
+
+a
+{
+color: black ;
+transition: color .2s;
+}
+
+a:hover
+{
+    text-decoration: none;
+    color: grey;
 }
 
 p
@@ -46,7 +59,7 @@ p
 body
 {
     margin: 0;
-    height: 100vw;
+    min-height:100%;
     font-family: 'texte';
 }
 
@@ -144,6 +157,84 @@ button
     margin-top: 15px;
     margin-right: 15px;
 }
+
+.burger-menu
+{
+    background-color: #F8C804;
+    position: absolute;
+    top: 71px;
+    height: 100%;
+    width: 70%;
+    transition: height 1s;
+}
+
+.collapsing
+{
+    position: relative;
+}
+
+.filter
+{
+    color: white;
+    font-family: 'texte-bold';
+}
+
+.filter p
+{
+    font-size: 1.5rem;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+/****** OVERLAY *****/
+
+.cover-card
+{
+    position: relative;
+}
+
+.overlay
+{
+    transition: .5s ease;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    opacity: 0;
+    height: 100%;
+    width: 50%;
+    margin: auto;
+    padding: 40px;
+    background-color: white;
+    border: 1px solid grey;
+}
+
+.cover-card .cover:hover
+{
+    opacity: .3;
+}
+
+.cover-card .overlay:hover
+{
+    opacity: .8;
+    width:195px;
+    z-index: 2;
+}
+
+.selection {
+    margin-top: -35px;
+}
+
+.selection .row {
+    margin-bottom: 10px;
+}
+
+.selection .cover {
+    height: 185px;
+    margin-left: 5px;
+    margin: 5px;
+    transition: .5s ease;
+}
+
 
 /*----- DESKTOP NAV ----*/
 nav
@@ -251,7 +342,6 @@ footer
     height: 20vh;
     text-align: center;
     padding: 45px;
-
 }
 
 footer p

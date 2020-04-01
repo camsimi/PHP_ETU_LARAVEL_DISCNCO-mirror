@@ -29,7 +29,7 @@ class ProductController extends Controller
     {
         $product = new Product;
         $product->name = $request->name;
-        $product->artist = $request->artis;
+        $product->artist = $request->artist;
         $product->price = $request->price;
 
         $product->save();
@@ -49,6 +49,7 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
+
         $product = Product::find($id);
         $product->name = $request->name;
         $product->price = $request->price;
@@ -60,7 +61,9 @@ class ProductController extends Controller
 
     public function destroy($id)
     {
-        //
+        Product::destroy($id);
+
+        return view('products.confirm-delete-product');
     }
 
     public function index_home()
@@ -68,5 +71,11 @@ class ProductController extends Controller
         $catalog = Product::all()->take(12);
         $newreleases = Product::orderBy('created_at', 'DESC')->get()->take(10);
         return view('home', ['catalog' => $catalog,'newreleases' => $newreleases]);
+    }
+
+    public function index_manage()
+    {
+        $catalog = Product::all();
+        return view('products.manage-articles', ['catalog' => $catalog]);
     }
 }

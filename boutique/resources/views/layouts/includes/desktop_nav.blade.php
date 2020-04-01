@@ -4,6 +4,12 @@
             <a>Newsletter</a>
             <span class="separator">|</span>
             <a href="">Blog</a>
+            {{-- @if () --}}
+                <span class="separator">|</span>
+                <a href="/products/create">Add an article</a>
+                <span class="separator">|</span>
+                <a href="/products/manage">Manage articles</a>
+            {{-- @endif --}}
         </div>
         <div class="col right">
             <a><img class="member icon" src="{{ asset('media/icons/member.svg') }}" alt="member button">Connexion</a>
@@ -26,7 +32,7 @@
 
             <a>New Releases</a>
             <span class="separator">|</span>
-            <a href="/catalog">Catalog</a>
+            <a href="/products">Catalog</a>
             <span class="separator">|</span>
             <a>Turntables</a>
             <span class="separator">|</span>

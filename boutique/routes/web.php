@@ -19,13 +19,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', 'ProductController@index_home');
-
+Route::get('/products/manage', 'ProductController@index_manage');
 Route::resource('products', 'ProductController');
-
-// Route::get('/catalog', 'ProductController@index');
-// Route::get('/products/create', 'ProductController@create');
-// Route::post('products', 'ProductController@store');
-// Route::get('/products/{id}', 'ProductController@show');
 
 Route::get('/cart', function () {
     return view('cart.cart');

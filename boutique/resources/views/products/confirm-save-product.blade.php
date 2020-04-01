@@ -4,9 +4,9 @@
 
 @endsection
 @section('content')
-    <div class="container d-lg-inline-flex justify-content-lg-around">
+    <div class="container">
         <div>
-            <img src="../{{$product->image}}" alt="turntable">
+            <img src="{{asset($product->image)}}" alt="album cover">
         </div>
         <div>
             <h3>{{$product->name}}</h3>

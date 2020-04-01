@@ -18,7 +18,7 @@
             @foreach ($newreleases as $key=>$product)
                 <div class="{{$key !== 0 ? "carousel-item" : "carousel-item active"}}">
                     <div class="row">
-                        <img class ="col-6 offset-3 col-sm-4 offset-sm-2 cover" src="{{$product->image}}" alt="album cover">
+                        <a class="col-6 offset-3 col-sm-4 offset-sm-2" href="{{url('products', [$product->id])}}"><img class ="cover" src="{{asset($product->image)}}" alt="album cover"></a>
                         <section class="col-lg-4 d-none d-sm-block infos">
                             <p class="album">{{$product->name}}</p>
                             <p class="artist">{{$product->artist}}</p>
@@ -27,7 +27,7 @@
                             </p>
                             <div class="row">
                                 <p class="col prix">{{$product->price}} $</p>
-                                <button class="col" type="submit"><img class="see_more" src="{{ asset('media/buttons/see_more.svg')}}"></button>
+                                <a href="{{url('products', [$product->id])}}""><img class="see_more" src="{{ asset('media/buttons/see_more.svg')}}"></a>
                             </div>
                         </section>
                     </div>
@@ -93,22 +93,32 @@
         </div>
     </div>
 
-<div class="container">
+<div class="container home-container">
     <div class="selection desktop">
         <div class="row">
             @foreach ($catalog as $product)
                 <div class="col-2">
-                    <section>
-                        <img class ="cover" src="{{ $product->image }}"
-                        alt="Single of the week cover">
+                    <section class="cover-card">
+                        <a href="{{url('products', [$product->id])}}"">
+                            <img class ="cover" src="{{asset($product->image) }}"
+                            alt="Single of the week cover">
+                        </a>
+                        <div class="overlay d-flex">
+                            <button>
+                                <img class="button play_button" src="{{asset('media/buttons/play_black.svg')}}" alt="écouter un extrait">
+                            </button>
+                            <button>
+                                <img class="button cart_button" src="{{asset('media/buttons/cart_button.svg')}}" alt="add to cart">
+                            </button>
+                        </div>
                     </section>
                 </div>
             @endforeach
         </div>
         <div class="row">
-            <button class="col offset-10" type="submit">
+            <a href="/products" class="col offset-10" type="submit">
                 <img class="see_more" src="{{ asset('media/buttons/see_more.svg')}}">
-            </button>
+            </a>
         </div>
 
     </div>

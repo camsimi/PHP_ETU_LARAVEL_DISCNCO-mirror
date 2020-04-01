@@ -48,10 +48,10 @@ span {
     margin-top: 35px;
 }
 
-.cover {
+/* .cover {
     padding-top: 10px;
     padding-bottom: 15px;
-}
+} */
 
 .cover_catalog {
     max-width: 100%;
@@ -99,21 +99,7 @@ span {
     display: none;
 }
 
-
-
 /* DESKTOP */
-
-.filter {
-    height: 30px;
-    margin: -15px;
-}
-
-.filter p
-{
-    font-size: 1.5em;
-    color: white;
-    line-height: 30px;
-}
 
 .genre
 {
@@ -134,6 +120,10 @@ span {
     margin-top: 20px;
 }
 
+.product-page-container
+{
+    margin-top: 80px;
+}
 
 @media (min-width: 400px) {
     .desktop_genre {
@@ -142,11 +132,64 @@ span {
         margin-bottom: 80px;
     }
 
-    .container {
-        margin-top: 100px;
-    }
-
     .select-container {
         display: none;
+    }
+
+    .product-page-container
+    {
+        margin-top: 100px;
+    }
+    /******** EDIT PAGE *******/
+
+    .card-body
+    {
+        height: 120px;
+    }
+    .card .edit
+    {
+        position: absolute;
+        bottom: 10px;
+        left: 85px;
+    }
+
+    .card
+    {
+        margin: 10px;
+        background-color: white;
+        transition: background-color .5s;
+    }
+
+    .card:hover{
+        background-color: #F8C804;
+    }
+
+    .record_cards
+    {
+        margin:auto;
+    }
+
+    .edit-product .infos
+    {
+        padding:75px;
+    }
+
+    .product-container
+    {
+        margin-top:15px;
+    }
+
+    .edit-product button
+    {
+        margin: 10px;
+        min-height: 35px;
+        min-width: 100px;
+    }
+
+    /****** CONFIRM-EDIT PAGE ******/
+
+    .update-container
+    {
+        margin-top: 100px;
     }
 }

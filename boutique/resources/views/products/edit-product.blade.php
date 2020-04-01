@@ -1,38 +1,52 @@
 @extends('layouts.app')
-@yield('page_title', 'Editing')
+@section('page_title', 'Editing')
+@section('css')
+    <link href="{{ asset('css/style_products.css') }}" rel="stylesheet">
+@endsection
 
 @section('content')
-
+<div class="container edit-product">
     <h2>Update an article</h2>
 
     <form action="{{url('products', [$product->id])}}" method="POST">
         {{method_field('PATCH')}}
         {{ csrf_field() }}
-    <div class="container d-lg-inline-flex justify-content-lg-around">
-        <div>
-            <img src="{{asset($product->image)}}" height="200px" alt="turntable">
-        </div>
-        <div>
-            <input type="text" name="name" id="" placeholder="{{$product->name}}">
-            <div class="container flex-row d-flex justify-content-around">
-                <p class="p-2">{{$product->artist}}</p>
-                <p class="p-2">{{$product->genre_id}}</p>
-                <p class="p-2">Date - Classement</p>
+            <div class="row product-container">
+                <img class="col-sm-4 offset-sm-2" src="{{asset($product->image)}}" alt="turntable">
+                <div class="col col-sm infos offset-1">
+                    <div class="row">
+                        <input type="text" name="name" id="" value="{{$product->name}}">
+                    </div>
+                    <div class="row">
+                        <p class="p-2">{{$product->artist}}</p>
+                        <p class="p-2">{{$product->genre_id}}</p>
+                        <p class="p-2">Date - Classement</p>
+                    </div>
+                    <div class="row">
+                        <p>{{$product->description}}</p>
+                    </div>
+                    <div class="row">
+                        <p>Prix unitaire :
+                        <input type="number" name="price" id="" value="{{$product->price}}">
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <button class="btn btn-primary" type="submit" value="submit">Submit changes </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            </div>
-            <div>
-                <p>{{$product->description}}</p>
-            </div>
-            <div class="container d-flex flex-row justify-content-around">
-                <p>Prix unitaire :
-                <input type="number" name="price" id="" placeholder="{{$product->price}}">
-                </p>
-            </div>
-        </div>
-
-        <input type="submit" value="submit">
     </form>
 
-    </div>
+
+    <form action="{{ url('products' , $product->id) }}" method="POST">
+        {{ csrf_field() }}
+        {{ method_field('DELETE') }}
+        <button class="btn btn-danger"type="submit">Delete</button>
+    </form>
+
+</div>
 
 @endsection
