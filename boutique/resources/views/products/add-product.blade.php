@@ -12,10 +12,10 @@
             <div class="mx-auto">
                 <form method="POST" action="/product" enctype="multipart/form-data">
                     {{ csrf_field() }}
-                    <input type="text" name="name" placeholder="Nom du nouvel article" required/>
+                    <input type="text" name="name" placeholder="Nom du nouvel article"/>
                     <strong class="text-danger"></strong>
                     <br> <br>
-                    <input type="text" name="price" placeholder="Prix en euros" required/><strong
+                    <input type="text" name="price" placeholder="Prix en euros"/><strong
                         class="text-danger"></strong> <br>
                     <br>
                     <input type="file" name="monfichier"/> <strong

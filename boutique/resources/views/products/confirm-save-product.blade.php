@@ -8,9 +8,9 @@
 
 @section('content')
     <div>
-        <p>Nom: {{ $product['name'] }}</p>
-        <p>Prix: {{ $product['price'] }} </p>
-        <img src=" {{ $product['image'] }}" alt="">
+        <p>Nom: <strong>{{ $request['name'] }} </strong></p>
+        <p>Prix: <strong>{{ $request['price'] }} </strong> </p>
+        <img src=" {{ $request['image'] }}" alt="">
     </div>
-    
+
 @endsection
