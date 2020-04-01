@@ -35,19 +35,30 @@ class ProductController extends Controller
 //    Formulaire de soumission d'un nouveau produit
     public function create()
     {
-        $product = Products::create('');
         return view('products.add-product');
     }
 
 //    Sauvegarder en BDD un nouveau produit
-    public function store() {
-        return view('products.confirm-save-product');
+    public function store(Request $request) {
+        $product = new Products;
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->image = $request->price;
+        $product->save();
+        return view('products.confirm-save-product', $product);
     }
 
 //    Afficher le formulaire de mise à jour d'un produit
     public function edit() {
+
         return view('products.edit-product.blade.php');
     }
 
+    public function update() {
+        return view ('products.confirm-edit-product');
+    }
 
+    public function destroy() {
+        return view('products.confirm-delete-product');
+    }
 }
