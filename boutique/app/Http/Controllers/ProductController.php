@@ -45,7 +45,7 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->image = $request->price;
         $product->save();
-        return view('products.confirm-save-product', $product);
+        return view('products.confirm-save-product', ['product' => $product]);
     }
 
 //    Afficher le formulaire de mise à jour d'un produit
