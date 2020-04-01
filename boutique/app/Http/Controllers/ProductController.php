@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Product;
+use App\Genre;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
@@ -68,14 +70,24 @@ class ProductController extends Controller
 
     public function index_home()
     {
-        $catalog = Product::all()->take(12);
+        $catalog = Product::with('genre')->get();
         $newreleases = Product::orderBy('created_at', 'DESC')->get()->take(10);
-        return view('home', ['catalog' => $catalog,'newreleases' => $newreleases]);
+
+        $genres = Genre::pluck('name', 'id');
+        return view('home', ['catalog' => $catalog,'newreleases' => $newreleases, 'genres' => $genres]);
     }
 
     public function index_manage()
     {
         $catalog = Product::all();
         return view('products.manage-articles', ['catalog' => $catalog]);
+    }
+
+    public function test()
+    {
+        $product = Product::find(1);
+        $genres = $product->genre;
+
+        return view('test', ['products' => $product, 'genres' => $genres]);
     }
 }

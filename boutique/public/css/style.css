@@ -182,8 +182,16 @@ button
 .filter p
 {
     font-size: 1.5rem;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin: 8px;
+    text-align: center;
+    min-width: 100px;
+    padding: 0px;
+}
+
+.filter p:hover
+{
+    background-color: #86A6AA;
+    border-radius: 40px;
 }
 
 /****** OVERLAY *****/
