@@ -1,6 +1,6 @@
 @extends('../layouts.app')
 
-@section('page_title', 'Add a Product')
+@section('page_title', 'Modifs')
 
 @section('css')
     <link href="{{ asset('css/style_products.css') }}" rel="stylesheet">
@@ -12,7 +12,7 @@
         <div class="mx-auto">
             <h4>Modifier le produit</h4>
             <form method="post" action="/product/{{$product->id}}" enctype="multipart/form-data">
-                @method('put');
+                @method('put')
                 {{ csrf_field() }}
                 <input type="text" name="name" value=" {{ $product->name }}" placeholder="Modifier le nom"/>
                 <strong class="text-danger"></strong>

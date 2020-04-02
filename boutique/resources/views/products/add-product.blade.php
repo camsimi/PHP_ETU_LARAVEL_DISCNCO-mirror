@@ -12,14 +12,19 @@
             <div class="mx-auto">
                 <form method="POST" action="/product" enctype="multipart/form-data">
                     {{ csrf_field() }}
-                    <input type="text" name="name" placeholder="Nom du nouvel article"/>
-                    <strong class="text-danger"></strong>
+                    <input type="text" name="name" value="{{ old('name') }}" placeholder="Nom du nouvel article"/>
+                    @if ($errors->has('name'))
+                        <p>{{ $errors->first('name') }}</p>
+                    @endif
                     <br> <br>
-                    <input type="text" name="price" placeholder="Prix en euros"/><strong
-                        class="text-danger"></strong> <br>
+                    <input type="text" name="price" value="{{ old('price') }}" placeholder="Prix en euros"/>
+                    @if ($errors->has('price'))
+                        <p>{{ $errors->first('price') }}</p>
+                    @endif
                     <br>
-                    <input type="file" name="image"/> <strong
-                        class="text-danger"></strong> <br> <br>
+                    <br>
+                    <input type="file" name="image"/>
+                        <br> <br>
                     <button type="submit" value="submit">Valider</button>
                     <br>
                 </form>

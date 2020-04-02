@@ -34,7 +34,7 @@
     </div>
 
     <div>
-        <a href="/product/{{$product->id}}/edit">
+        <a href="/product/{{ $product->id }}/edit">
             <button type="submit">Modifier le produit</button>
         </a>
     </div>

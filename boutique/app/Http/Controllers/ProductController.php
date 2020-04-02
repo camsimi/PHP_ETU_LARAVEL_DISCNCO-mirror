@@ -40,14 +40,15 @@ class ProductController extends Controller
 
 //    Sauvegarder en BDD un nouveau produit
     public function store(Request $request) {
-//        $product = new Products;
-//        $product->name = $request->name;
-//        $product->price = $request->price;
-//        $product->image = $request->price;
-//        $product->save();
         $request->validate(['name' => 'required', 'price' => 'required']);
-        Products::create($request->all());
-        return view('products.confirm-save-product', ['request' => $request]);
+        $product = new Products;
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->image = $request->price;
+        $product->save();
+
+//        Products::create($request->all());
+        return view('products.confirm-save-product', ['product' => $product]);
     }
 
 //    Afficher le formulaire de mise à jour d'un produit

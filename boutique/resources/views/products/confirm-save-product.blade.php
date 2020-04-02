@@ -9,9 +9,9 @@
 @section('content')
     <div>
         <h4>Votre produit a bien été ajouté au catalogue!</h4>
-        <p>Nom: <strong>{{ $request['name'] }} </strong></p>
-        <p>Prix: <strong>{{ $request['price'] }} </strong> </p>
-        <img src=" {{ $request['image'] }}" alt="">
+        <p>Nom: <strong>{{ $product->name }} </strong></p>
+        <p>Prix: <strong>{{ $product->price }} </strong> </p>
+        <img src=" {{ $product->image }}" alt="">
     </div>
 
 @endsection
