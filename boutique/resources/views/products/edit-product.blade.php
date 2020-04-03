@@ -20,22 +20,6 @@
                     <div class="row">
                         <p class="p-2">{{$product->artist}}</p>
 
-                    <select name="genre_id" id="">
-                        @foreach ($genres as $genre)
-                            <option {{$product->genre_id === $genre->id ? "selected" : ""}} value="{{$genre->id}}">
-                                {{$genre->name}}
-                            </option>
-                        @endforeach
-                    </select>
-
-                    <select name="subgenre_id" id="">
-                        @foreach ($subgenres as $subgenre)
-                            <option {{$product->subgenre_id === $subgenre->id ? "selected" : ""}} value="{{$subgenre->id}}">
-                                {{$subgenre->name}}
-                            </option>
-                        @endforeach
-                    </select>
-
                         <p class="p-2">Date - Classement</p>
                     </div>
                     <div class="row">

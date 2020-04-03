@@ -11,12 +11,6 @@ use App\Order;
 class Product extends Model
 {
 
-
-    public function genre()
-    {
-        return $this->belongsTo(Genre::class);
-    }
-
     public function carts()
     {
         return $this->belongsToMany(Cart::class)->withPivot('quantity');
@@ -26,11 +20,5 @@ class Product extends Model
     {
         return $this->belongsToMany(Order::class)->withPivot('quantity');
     }
-
-    public function subgenre()
-    {
-        return $this->belongsTo(Subgenre::class);
-    }
-
 
 }

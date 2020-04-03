@@ -78,10 +78,7 @@
     <div class="desktop filter-div">
         <div class="row filter genre">
             <div class="col-8 offset-2 d-flex">
-                        @foreach ($genres as $key => $item)
-                            <p class="col-1">{{$item}}</p>
 
-                         @endforeach
             </div>
         </div>
         <div class="row filter subgenre">

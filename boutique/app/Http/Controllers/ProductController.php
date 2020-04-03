@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Product;
-use App\Genre;
-use App\Subgenre;
+// use App\Genre;
+// use App\Subgenre;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -48,7 +48,9 @@ class ProductController extends Controller
     public function edit($id)
     {
         return view('products.edit-product',
-        ['product' => Product::findOrFail($id), 'genres' => Genre::all(), 'subgenres' => Subgenre::all()]);
+        ['product' => Product::findOrFail($id),
+        // 'genres' => Genre::all(), 'subgenres' => Subgenre::all()
+        ]);
     }
 
     public function update(Request $request, $id)
