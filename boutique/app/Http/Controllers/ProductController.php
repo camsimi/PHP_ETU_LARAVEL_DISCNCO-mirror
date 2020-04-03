@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Genre;
+use App\Subgenre;
 use Illuminate\Http\Request;
 
 use App\Product;
@@ -25,11 +27,14 @@ class ProductController extends Controller
 
     public function create()
     {
-        return view('products.add-product');
+        $genres = Genre::all();
+        $subgenres = Subgenre::all();
+        return view('products.add-product', ['genres' => $genres], ['subgenres' => $subgenres]);
     }
 
     public function store(Request $request)
     {
+        $request->validate(['name' => 'required', 'artist' => 'required', 'price' => 'required|numeric|min:1|max:200000000']);
         $product = new Product;
         $product->name = $request->name;
         $product->artist = $request->artist;

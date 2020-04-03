@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 use App\Product;
 use App\Subgenre;
 
-
 class Genre extends Model {
 
     public function product() {
