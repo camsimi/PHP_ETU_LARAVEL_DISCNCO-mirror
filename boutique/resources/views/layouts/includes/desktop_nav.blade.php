@@ -14,7 +14,7 @@
         <div class="col right">
             <a><img class="member icon" src="{{ asset('media/icons/member.svg') }}" alt="member button">Connexion</a>
             <span class="separator">|</span>
-            <a href="/cart"><img class="cart icon" src="{{ asset('media/icons/cart.svg') }}" alt="cart button">Cart</a>
+            <a href="/carts"><img class="cart icon" src="{{ asset('media/icons/cart.svg') }}" alt="cart button">Cart</a>
         </div>
     </div>
 

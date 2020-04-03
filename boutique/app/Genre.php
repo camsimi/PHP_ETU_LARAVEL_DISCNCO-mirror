@@ -15,6 +15,6 @@ class Genre extends Model
 
     public function subgenres()
     {
-        return $this->hasOne(Subgenre::class);
+        return $this->hasMany(Subgenre::class);
     }
 }

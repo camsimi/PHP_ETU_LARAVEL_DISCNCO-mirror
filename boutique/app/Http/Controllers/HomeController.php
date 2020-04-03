@@ -3,22 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
+use App\Genre;
 use App\Cart;
 
-class CartController extends Controller
+class HomeController extends Controller
 {
 
     public function index()
     {
-        $carts = Cart::all();
+        $catalog = Product::with('genre')->get();
+        $newreleases = $catalog->sortByDesc('created_at');
 
-        return view(
-            'cart.carts', ['carts' => $carts]);
-    }
+        $genres = Genre::pluck('name', 'id');
 
-    public function create()
-    {
-        //
+        return view('home', ['catalog' => $catalog,'newreleases' => $newreleases, 'genres' => $genres]);
     }
 
     public function store(Request $request)
@@ -26,15 +25,10 @@ class CartController extends Controller
         //
     }
 
-    public function edit($id)
-    {
-        $cart = Cart::findOrFail($id);
-        return view('cart.edit-cart', ['cart' => Cart::find($id), 'products' => $cart->products]);
-    }
-
     public function update(Request $request, $id)
     {
-        // dd($request->all());
+        $cart = Cart::updateOrCreate()
+
         $cart = Cart::findOrFail($id);
         $products = $cart->products;
         foreach($products as $product)
@@ -43,12 +37,6 @@ class CartController extends Controller
             $cart->products()->updateExistingPivot($product->id, ['quantity' => $new_quantity]);
             $product->pivot->quantity = $new_quantity;
         }
-
-            return view('cart.edit-cart', ['cart' => $cart, 'products' => $cart->products]);
     }
 
-    public function destroy($id)
-    {
-        //
-    }
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Product;
 use App\Genre;
+use App\Subgenre;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -46,20 +47,24 @@ class ProductController extends Controller
 
     public function edit($id)
     {
-        return view('products.edit-product', ['product' => Product::findOrFail($id)]);
+        return view('products.edit-product',
+        ['product' => Product::findOrFail($id), 'genres' => Genre::all(), 'subgenres' => Subgenre::all()]);
     }
 
     public function update(Request $request, $id)
     {
-
         $product = Product::find($id);
         $product->name = $request->name;
         $product->price = $request->price;
+        $product->genre_id = $request->genre_id;
+        $product->subgenre_id = $request->subgenre_id;
+
         $product->save();
 
-        return view('products.confirm-edit-product', ['product' => Product::findOrFail($id)]);
+        return view ('products.confirm-edit-product',
+        ['product' => Product::findOrFail($id)]
+        );
     }
-
 
     public function destroy($id)
     {
@@ -68,26 +73,9 @@ class ProductController extends Controller
         return view('products.confirm-delete-product');
     }
 
-    public function index_home()
-    {
-        $catalog = Product::with('genre')->get();
-        $newreleases = $catalog->sortByDesc('created_at');
-        $genres = Genre::pluck('name', 'id');
-
-        return view('home', ['catalog' => $catalog,'newreleases' => $newreleases, 'genres' => $genres]);
-    }
-
-    public function index_manage()
+    public function manage()
     {
         $catalog = Product::all();
         return view('products.manage-articles', ['catalog' => $catalog]);
-    }
-
-    public function test()
-    {
-        $product = Product::find(1);
-        $genres = $product->genre;
-
-        return view('test', ['products' => $product, 'genres' => $genres]);
     }
 }

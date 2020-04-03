@@ -97,35 +97,35 @@
     </div>
 
 <div class="container home-container">
-    <div class="selection desktop">
-        <div class="row">
-            @foreach ($catalog as $product)
-                <div class="col-2">
-                    <section class="cover-card">
-                        <a href="{{url('products', [$product->id])}}"">
-                            <img class ="cover" src="{{asset($product->image) }}"
-                            alt="Single of the week cover">
-                        </a>
-                        <div class="overlay d-flex">
-                            <p>{{$product->genre->name}}</p>
-                            <button>
-                                <img class="button play_button" src="{{asset('media/buttons/play_black.svg')}}" alt="écouter un extrait">
-                            </button>
-                            <button>
-                                <img class="button cart_button" src="{{asset('media/buttons/cart_button.svg')}}" alt="add to cart">
-                            </button>
-                        </div>
-                    </section>
-                </div>
-            @endforeach
-        </div>
-        <div class="row">
-            <a href="/products" class="col offset-10" type="submit">
-                <img class="see_more" src="{{ asset('media/buttons/see_more.svg')}}">
-            </a>
-        </div>
-
-    </div>
+    <form action="#" method="POST">
+        <div class="selection desktop">
+            <div class="row">
+                @foreach ($catalog as $product)
+                    <div class="col-2">
+                        <section class="cover-card">
+                            <a href="{{url('products', [$product->id])}}"">
+                                <img class ="cover" src="{{asset($product->image) }}"
+                                alt="Single of the week cover">
+                            </a>
+                            <div class="overlay d-flex">
+                                <button>
+                                    <img class="button play_button" src="{{asset('media/buttons/play_black.svg')}}" alt="écouter un extrait">
+                                </button>
+                                <button type="submit">
+                                    <img class="button cart_button" src="{{asset('media/buttons/cart_button.svg')}}" alt="add to cart">
+                                </button>
+                            </div>
+                        </section>
+                    </div>
+                @endforeach
+            </div>
+            <div class="row">
+                <a href="/products" class="col offset-10" type="submit">
+                    <img class="see_more" src="{{ asset('media/buttons/see_more.svg')}}">
+                </a>
+            </div>
+         </div>
+    </form>
 
     <div class="turntables category">
         <h2>TURNTABLES</h2>

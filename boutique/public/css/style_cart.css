@@ -1,0 +1,12 @@
+.cart-table td
+{
+    margin:auto;
+    vertical-align: middle;
+    font-size: 1.5rem;
+}
+
+.cart-table thead
+{
+    font-size: 1.5rem;
+    font-family: 'titre';
+}

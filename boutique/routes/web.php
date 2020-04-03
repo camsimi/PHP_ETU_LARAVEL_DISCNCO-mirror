@@ -18,13 +18,21 @@ use Illuminate\Support\Facades\Route;
 //     return view('home');
 // });
 
-Route::get('/', 'ProductController@index_home');
-Route::get('/products/manage', 'ProductController@index_manage');
+//HOME//
+Route::get('/', 'HomeController@index');
+Route::post('/', 'HomeController@update');
+
+
+//PRODUCTS//
+Route::get('/products/manage', 'ProductController@manage');
 Route::resource('products', 'ProductController');
 
+//CART//
+Route::get('/carts', 'CartController@index');
+Route::get('/carts/{id}', 'CartController@edit');
+Route::patch('/carts/{id}', 'CartController@update');
+
+//TEST//
 Route::get('/test', 'ClientController@index');
 
-Route::get('/cart', function () {
-    return view('cart.cart');
-});
 
