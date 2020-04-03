@@ -30,44 +30,7 @@
 </div>
 
 <div class="container">
-    <div class="selection desktop">
-        <div class="cover-card col-4">
-            <a href="{{url('products', [$catalog[0]->id])}}"">
-                <img class ="cover" src="{{asset($catalog[0]->image) }}"
-                alt="Single of the week cover">
-            </a>
-            <div class="overlay d-flex">
-                <button>
-                    <img class="button play_button" src="{{asset('media/buttons/play_black.svg')}}" alt="écouter un extrait">
-                </button>
-                <button>
-                    <img class="button cart_button" src="{{asset('media/buttons/cart_button.svg')}}" alt="add to cart">
-                </button>
-            </div>
-        </div>
-        <div class="col">
-            <div class="row">
-                @foreach ($catalog as $key=>$product)
-                @if ($key !==0)
-                    <div class="cover-card col-2">
-                        <a href="{{url('products', [$product->id])}}"">
-                            <img class ="cover" src="{{asset($product->image) }}"
-                            alt="Single of the week cover">
-                        </a>
-                        <div class="overlay d-flex">
-                            <button>
-                                <img class="button play_button" src="{{asset('media/buttons/play_black.svg')}}" alt="écouter un extrait">
-                            </button>
-                            <button>
-                                <img class="button cart_button" src="{{asset('media/buttons/cart_button.svg')}}" alt="add to cart">
-                            </button>
-                        </div>
-                    </div>
-                    @endif
-                @endforeach
-            </div>
-        </div>
-    </div>
+
 
     <div class="week">
             <div class="week_bloc row">
