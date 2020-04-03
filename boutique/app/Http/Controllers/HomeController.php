@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 // use App\Genre;
-// use App\Cart;
+use App\Cart;
+use Carbon\Traits\Timestamp;
+use Illuminate\Support\Facades\Cookie;
 
 class HomeController extends Controller
 {
@@ -15,7 +17,21 @@ class HomeController extends Controller
         $catalog = Product::all();
         $newreleases = $catalog->sortByDesc('created_at');
 
-        return view('home', ['catalog' => $catalog,'newreleases' => $newreleases]);
+        if(Cookie::get('cartId') == null) {
+            $cart = Cart::create();
+            $cartId = Cookie::queue('cartId', $cart->id, 200 );
+        } else {
+            $cartId = Cookie::get('cartId');
+            $cart = Cart::find($cartId);
+            if($cart == null)
+            {
+                $cart = Cart::create();
+                Cookie::queue('cartId', $cart->id, 200);
+            }
+        }
+
+        $cartId = Cookie::get('cartId');
+        return view('home', ['catalog' => $catalog,'newreleases' => $newreleases, 'cartId' => $cartId]);
     }
 
     public function store(Request $request)
@@ -23,18 +39,15 @@ class HomeController extends Controller
         //
     }
 
-    public function update(Request $request, $id)
+    public function addToCart(Request $request, $id)
     {
-        // $cart = Cart::updateOrCreate()
 
-        // $cart = Cart::findOrFail($id);
-        // $products = $cart->products;
-        // foreach($products as $product)
-        // {
-        //     $new_quantity = $request['quantity'][$product->id];
-        //     $cart->products()->updateExistingPivot($product->id, ['quantity' => $new_quantity]);
-        //     $product->pivot->quantity = $new_quantity;
-        // }
+        // dd($request->all());
+        $cart = Cart::findOrFail($id);
+        $product_id = $request->product_id;
+        $cart->products()->attach($id, ['product_id'=>$product_id, 'quantity' => 1]);
+
+        return redirect()->action('HomeController@index');
     }
 
 }

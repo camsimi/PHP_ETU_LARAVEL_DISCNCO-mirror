@@ -49,7 +49,6 @@ class ProductController extends Controller
     {
         return view('products.edit-product',
         ['product' => Product::findOrFail($id),
-        // 'genres' => Genre::all(), 'subgenres' => Subgenre::all()
         ]);
     }
 

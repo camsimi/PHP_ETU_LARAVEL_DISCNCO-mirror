@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 //HOME//
 Route::get('/', 'HomeController@index');
-Route::post('/', 'HomeController@update');
+Route::post('/{id}', 'HomeController@addToCart');
 
 
 //PRODUCTS//
