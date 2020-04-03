@@ -17,7 +17,7 @@
             <h3>{{$product->name}}</h3>
             <div class="">
                 <p class="p-2">{{$product->artist}}</p>
-                <p class="p-2">Date - Classement</p>
+n                <p class="p-2">Date - Classement</p>
 
             </div>
             <div>

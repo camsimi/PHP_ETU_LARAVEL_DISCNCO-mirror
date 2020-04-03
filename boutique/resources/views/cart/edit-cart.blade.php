@@ -18,6 +18,7 @@
                     <th scope="col">Artist</th>
                     <th scope="col-1">Price</th>
                     <th scope="col-1">Quantity</th>
+                    <th scope="col-1"></th>
                 </tr>
             </thead>
             <tbody>
@@ -39,12 +40,17 @@
                         <input type="number" value="{{$product->pivot->quantity}}" min="1"
                         name="quantity[{{$product->id}}]">
                     </td>
+                    <td>
+                        <button type="submit" name="delete" value="{{$product->id}}">
+                            <img src="{{asset('media/buttons/delete.svg')}}" alt="">
+                        </button>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
 
-        <button><img src="{{asset('media/buttons/edit_button.svg')}}" alt="order button"></button>
+        <button type="submit" name="action" value="edit"><img src="{{asset('media/buttons/edit_button.svg')}}" alt="order button"></button>
     </form>
 </div>
 @endsection

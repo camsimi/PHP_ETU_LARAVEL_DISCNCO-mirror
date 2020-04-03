@@ -32,19 +32,24 @@ class CartController extends Controller
         return view('cart.edit-cart', ['cart' => Cart::find($id), 'products' => $cart->products]);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $id) // UPDATE EXISTING CART //
     {
-        // dd($request->all());
+        // dd(request()->all());
         $cart = Cart::findOrFail($id);
         $products = $cart->products;
-        foreach($products as $product)
-        {
-            $new_quantity = $request['quantity'][$product->id];
-            $cart->products()->updateExistingPivot($product->id, ['quantity' => $new_quantity]);
-            $product->pivot->quantity = $new_quantity;
+        if($request->action == 'edit') {
+            foreach($products as $product)
+                {
+                    $new_quantity = $request['quantity'][$product->id];
+                    $cart->products()->updateExistingPivot($product->id, ['quantity' => $new_quantity]);
+                    $product->pivot->quantity = $new_quantity;
+                }
+        } else {
+            $cart->products()->detach($request->delete);
+            $cart->refresh();
+            $products = $cart->products;
         }
-
-            return view('cart.edit-cart', ['cart' => $cart, 'products' => $cart->products]);
+            return view('cart.edit-cart', ['cart' => $cart, 'products' => $products]);
     }
 
     public function destroy($id)

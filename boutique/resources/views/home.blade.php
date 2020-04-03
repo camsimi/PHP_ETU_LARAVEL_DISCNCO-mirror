@@ -18,7 +18,9 @@
             @foreach ($newreleases as $key=>$product)
                 <div class="{{$key !== 0 ? "carousel-item" : "carousel-item active"}}">
                     <div class="row">
-                        <a class="col-6 offset-3 col-sm-4 offset-sm-2" href="{{url('products', [$product->id])}}"><img class ="cover" src="{{asset($product->image)}}" alt="album cover"></a>
+                        <a class="col-6 offset-3 col-sm-4 offset-sm-2" href="{{url('products', [$product->id])}}">
+                            <img class ="cover" src="{{asset($product->image)}}" alt="album cover">
+                        </a>
                         <section class="col-lg-4 d-none d-sm-block infos">
                             <p class="album">{{$product->name}}</p>
                             <p class="artist">{{$product->artist}}</p>
@@ -94,10 +96,13 @@
     </div>
 
 <div class="container home-container">
-    <form action="#" method="POST">
+    <form action="/{{$cartId}}" method="POST">
+        {{-- @method('patch') --}}
+        {{ csrf_field() }}
         <div class="selection desktop">
             <div class="row">
                 @foreach ($catalog as $product)
+                    {{-- <input type="hidden" name="product_id[{{$product->id}}]" value="{{$product->id}}"> --}}
                     <div class="col-2">
                         <section class="cover-card">
                             <a href="{{url('products', [$product->id])}}"">
@@ -108,7 +113,7 @@
                                 <button>
                                     <img class="button play_button" src="{{asset('media/buttons/play_black.svg')}}" alt="écouter un extrait">
                                 </button>
-                                <button type="submit">
+                                <button type="submit" name="product_id" value="{{$product->id}}">
                                     <img class="button cart_button" src="{{asset('media/buttons/cart_button.svg')}}" alt="add to cart">
                                 </button>
                             </div>

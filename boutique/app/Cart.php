@@ -9,6 +9,7 @@ use App\Product;
 class Cart extends Model
 {
 
+    // protected $fillable = ['client_id'];
 
     public function client()
     {
