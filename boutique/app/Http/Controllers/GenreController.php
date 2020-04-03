@@ -13,8 +13,9 @@ Use Illuminate\Http\Request;
 
 class GenreController extends Controller
 {
-    public function product() {
-        return $this->hasMany(Products::class);
+    public function show($id) {
+        $genre = Genre::where('id', $id)->firstOrFail();
+        $products = $genre->products;
     }
 }
 
