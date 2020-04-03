@@ -20,7 +20,7 @@
                     <div class="row">
                         <p class="p-2">{{$product->artist}}</p>
 
-                        <p class="p-2">Date - Classement</p>
+                        <p class="p-2">Date - Classement - {{$product->genre->name}}</p>
                     </div>
                     <div class="row">
                         <p>{{$product->description}}</p>
